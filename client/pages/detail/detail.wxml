@@ -1,0 +1,53 @@
+<!--pages/detail/detail.wxml-->
+<view class='content'>
+  <view class='section1'>
+    <swiper autoplay='true' interval='3000' duration='1000' indicator-dots='true'>
+      <block wx:for='{{imgUrls}}'>
+        <swiper-item>
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='section2'>
+    <view>{{title}}</view>
+    <view>￥{{price}}</view>
+  </view>
+  <view class='section3'>
+    <view>{{discription}}</view>
+  </view>
+  <view class='section4'>
+    <view class='section4_title'>
+      <text>留言板</text>
+      <image src='../../images/detail/write.png'></image>
+    </view>
+    <view class='section4_content'>
+      <view class='section4_title' bindtap="sendReply" data-isReply="false" data-id="15">发送新评论</view>
+      <!--<view wx:for="{{existedComments}}">
+        {{item.}}
+      </view>-->
+
+      <view wx:for="{{existedComment}}">
+        <view class="mess-cell">
+          <view style="position: relative;margin-right: 10px;">
+            <image src="{{item.Commenter.Avatar}}" style="width: 50px; height: 50px; display: block" />
+          </view>
+          <view class="right">
+            <view style="font-size: 30rpx;">{{item.Commenter.Nickname}}</view>
+            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+          </view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.Commenter.Id}}">回复</view>
+        </view>
+      </view>
+
+
+    </view>
+
+    <view class='section4_bottom'></view>
+  </view>
+  <view class='section5'>
+    <input type='text' placeholder='我要留言……' name='title' bindinput="collectComment" focus="{{inputFocus}}"></input>
+    <view bindtap='sendComment' data-isReply="false" data-id="{{receiver}}">发送</view>
+  </view>
+
+</view>

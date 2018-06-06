@@ -1,0 +1,37 @@
+/* pages/catagory/catagory.wxss */
+.container{
+  background-image:url(../../images/catagory/background.jpg);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+.row{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 150px;
+}
+.single{
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  border-bottom:1rpx solid #33cc66;
+  border-right: 1rpx solid #33cc66;
+}
+.single image{
+  width: 90px;
+  height: 90px;
+  margin: 10px;
+}
+.single text{
+  margin: 5px;
+  width: 1em;
+ font-family: '苹方-简', 'ubuntu';
+  src: 
+    url('http://weapp.liontao.xin:7001/fonts/PingFang.ttc'),
+    url('http://weapp.liontao.xin:7001/fonts/ubuntu.ttf');
+  text-align: middle;
+  line-height: 20px;
+  margin-top: 15px;
+}

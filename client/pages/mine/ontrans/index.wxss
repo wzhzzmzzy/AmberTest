@@ -1,0 +1,48 @@
+/* pages/mine/sold/sold.wxss */
+.content{
+  background-color: #ffffff;
+  height:400px;
+}
+.head{
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #33cc66;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.seperate{
+  height: 8px;
+  background-color: #33cc66;
+}
+.seperate1{
+  height: 1px;
+  background-color: #33cc66;
+}
+.hr{
+  display: flex;
+  flex-direction: column;
+}
+.item{
+  height:100px;
+  display: flex;
+  flex-direction: row;
+}
+.itemIcon{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.itemIcon image{
+  height: 80px;
+  width: 80px;
+}
+.productInfo{
+  display: flex;
+  flex-direction: column;
+}
+.productInfo text{
+  font-size: 17px;
+  margin: 10px;
+}

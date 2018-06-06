@@ -1,0 +1,87 @@
+<!--pages/mine/mine.wxml-->
+<view class='content'>
+  <view class='head'>
+    <button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" plain='true'>
+      获取头像昵称
+    </button>
+    <block wx:else>
+      <view class='headIcon'>
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="login">
+        <text>{{userInfo.nickName}}</text>
+      </view>
+    </block>
+    <view class='detail' bindtap='information'>
+        <text>></text>
+    </view>
+  </view>
+
+  <view class='hr'>
+    <view class='item' bindtap='sold'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>我卖出的</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+    <view class='seperate1'></view>
+    <view class='item' bindtap='bought'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>我买到的</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+    <view class='seperate1'></view>
+    <view class='item' bindtap='ontrans'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>正在交易</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+    <view class='seperate1'></view>
+    <view class='item' bindtap='published'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>我发布的</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+
+    <view class='seperate'></view>
+    
+    <view class='item' bindtap='setup'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>设置</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+    <view class='seperate1'></view>
+
+    <view class='item' bindtap='aboutus'>
+      <view class='itemIcon'>
+        <image src='../../images/mine/arrow.png'></image>
+      </view>
+      <view class='title'>关于我们</view>
+      <view class='detail1'>
+        <text>></text>
+      </view>
+    </view>
+    <view class='seperate1'></view>
+
+  </view>
+
+</view>

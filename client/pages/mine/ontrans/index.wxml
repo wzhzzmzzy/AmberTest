@@ -1,0 +1,45 @@
+<!--pages/mine/sold/sold.wxml-->
+<view class='content'>
+  <view class='head'>
+    <text>正在交易</text>
+  </view>
+  <view class='seperate1'></view>
+  <view class='hr'>
+    <view class='item'>
+    <view class='head'>
+        <text>我卖的</text>
+    </view>
+    <view class='seperate1'></view>
+      <view wx:if="{{noSellItem===false}}">
+        <view wx:for="{{sellItems}}" data-cata="sell" data-index="{{index}}" class='productInfo' bindtap='toItem'>
+          <text>商品名称：{{item.Title}}</text>
+          <text>最后更新：{{item.RefreshTime}}</text>
+          <text>商品详情：{{item.Detail}}</text>
+          <view class='seperate1'></view>
+        </view>
+      </view>
+      <view wx:else>
+        <text>你没有正在交易中的商品</text>
+      </view>
+    <view class='seperate1'></view>
+    </view>
+    <view class='item'>
+    <view class='head'>
+        <text>我买的</text>
+    </view>
+    <view class='seperate1'></view>
+      <view wx:if="{{noBuyItem===false}}">
+        <view wx:for="{{buyItems}}" data-cata="buy" data-index="{{index}}" class='productInfo' bindtap='toItem'>
+          <text>商品名称：{{item.Title}}</text>
+          <text>最后更新：{{item.RefreshTime}}</text>
+          <text>商品详情：{{item.Detail}}</text>
+          <view class='seperate1'></view>
+        </view>
+      </view>
+      <view wx:else>
+        <text>你没有正在交易中的商品</text>
+      </view>
+    <view class='seperate1'></view>
+    </view>
+  </view>
+</view>

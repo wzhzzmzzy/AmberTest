@@ -1,0 +1,2 @@
+<!--pages/mine/setup/setup.wxml-->
+<button plain='true'> 更换所在城市 </button>

@@ -1,0 +1,101 @@
+/* pages/publish/publish.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  font-size: 16px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  margin-top: 5px;
+  background-color: #ffffff;
+  height:40px;
+}
+.title input{
+  margin-top: 5px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.detail{
+  height: 150px;
+  margin-top: 5px;
+  background-color: #ffffff;
+}
+.detail textarea{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5px;
+}
+.third{
+  margin-top: 5px;
+  background-color: #ffffff;
+  height:40px;
+  display: flex;
+  flex-direction: row;
+}
+.price{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+}
+.price input{
+  margin-top: 5px;
+  margin-left: 10%;
+  width:50px;
+}
+.price text{
+  margin-top: 5px;
+  color: #666666;
+  font-size: 20px;
+}
+.ctgr{
+  margin-top: 7px;
+  color:#33cc66;
+  margin-left: 28%;
+  width:150px;
+}
+.forth{
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  margin-top: 5px;
+}
+.addphoto{
+  height:80px;
+  width:80px;
+  border:2rpx dashed #33cc66;
+  border-radius: 20%;
+  font-size: 30px;
+  color: #33cc66;
+  display: table;
+  background-color: #ffffff;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.addphoto text{
+  display: table-cell;
+  text-align: center; 
+  vertical-align:middle; 
+}
+.photo{
+  width:180rpx;
+  height:180rpx;
+  margin-top: 5%;
+  margin-left: 5%;
+  border-radius: 20%;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 95%;
+  background-color: #33cc66;
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-left: 2.5%;
+}

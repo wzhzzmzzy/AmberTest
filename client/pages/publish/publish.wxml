@@ -1,0 +1,34 @@
+<!--pages/publish/publish.wxml-->
+<view class='content'>
+  <view class='info'>
+    <view class='title'>
+      <input type='text' placeholder='商品名称' name='title' bindinput="getName" ></input>
+    </view>
+    <view class='detail'>
+      <textarea placeholder='商品描述信息' maxlength='140' bindinput="getDetail"></textarea>
+    </view>
+    <view class='third'>
+      <view class='price'>
+        <text>￥</text>
+        <input type='number' placeholder='价格' name='price' bindinput="getPrice" ></input>
+      </view>
+      <view class='ctgr'>
+        <picker bindchange="catagoryPicker" value="{{catagory}}" range="{{catagoryList}}">
+          <view>分类：{{catagoryList[catagory]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class='forth'>
+    <view class='addphoto' bindtap='chooseImg'>
+      <text>+</text>
+    </view>
+    <view wx:if="{{images.length !== 0}}">
+      <view wx:for="{{images}}" >
+        <image src="{{item}}" mode="aspectFill" class="photo"/>
+      </view>
+    </view>
+  </view>
+  <button class='btn' bindtap="doPublish">发布</button>
+
+</view>

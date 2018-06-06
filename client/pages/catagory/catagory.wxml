@@ -1,0 +1,46 @@
+<view class='container'>
+  <view class='row'>
+    <view class='single' bindtap='book'>
+      <image src='../../images/catagory/book.png'></image>
+      <text>闲置书籍</text>
+    </view>
+    <view class='single' bindtap='cloth'>
+      <image src='../../images/catagory/cloth.png'></image>
+      <text>衣帽鞋服</text>
+    </view>
+  </view>
+
+  <view class='row'>
+    <view class='single' bindtap='commodity'>
+      <image src='../../images/catagory/commodity.png'></image>
+      <text>日用杂货</text>
+    </view>
+    <view class='single' bindtap='edevice'>
+      <image src='../../images/catagory/e-device.png'></image>
+      <text>数码产品</text>
+    </view>
+  </view>
+
+  <view class='row'>
+    <view class='single' bindtap='vehicle'>
+      <image src='../../images/catagory/vehicle.png'></image>
+      <text>代步工具</text>
+    </view>
+    <view class='single' bindtap='snack'>
+      <image src='../../images/catagory/snack.png'></image>
+      <text>休闲零食</text>
+    </view>
+  </view>
+
+  <view class='row'>
+    <view class='single'bindtap='sport'>
+      <image src='../../images/catagory/sport.png'></image>
+      <text>文体用品</text>
+    </view>
+    <view class='single' bindtap='other'>
+      <image src='../../images/catagory/other.png'></image>
+      <text>其它</text>
+    </view>
+  </view>
+
+</view>

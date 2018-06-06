@@ -1,0 +1,9 @@
+/* pages/mine/setup/setup.wxss */
+button{
+  margin: 10%;
+  height: 50px;
+  width: 80%;
+  font-size: 18px;
+  color: #33cc66;
+  border-color: #33cc66;
+}

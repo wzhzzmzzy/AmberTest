@@ -1,0 +1,64 @@
+{
+  "pages":[
+    "pages/home/home",
+    
+    "pages/catagory/catagory",
+    "pages/catagory/items/index",
+
+    "pages/publish/publish",
+    "pages/message/message",
+
+    "pages/detail/detail",
+
+    "pages/mine/mine",
+    "pages/mine/items/index",
+    "pages/mine/setup/setup",
+    "pages/mine/aboutus/aboutus",
+    "pages/mine/info/info",
+    "pages/mine/ontrans/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#33cc66",
+    "navigationBarTitleText": "校园二手",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#000000",
+    "selectedColor": "#b33a3a",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/TabBar/home_1.png",
+        "selectedIconPath": "images/TabBar/home_2.png"
+      },
+      {
+        "pagePath": "pages/catagory/catagory",
+        "text": "分类",
+        "iconPath": "images/TabBar/catagory_1.png",
+        "selectedIconPath": "images/TabBar/catagory_2.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "images/TabBar/publish_1.png",
+        "selectedIconPath": "images/TabBar/publish_2.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/TabBar/message_1.png",
+        "selectedIconPath": "images/TabBar/message_2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/TabBar/mine_1.png",
+        "selectedIconPath": "images/TabBar/mine_2.png"
+      }
+    ]
+  }
+}
