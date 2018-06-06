@@ -28,16 +28,29 @@
       </view>-->
 
       <view wx:for="{{existedComment}}">
-        <view class="mess-cell">
+        
+
+        <view class="mess-cell" wx:if="{{item.Receiver.Id==15}}">
           <view style="position: relative;margin-right: 10px;">
-            <image src="{{item.Commenter.Avatar}}" style="width: 50px; height: 50px; display: block" />
+            <image src="{{item.CommenterId.Avatar}}" style="width: 50px; height: 50px; display: block" />
           </view>
           <view class="right">
-            <view style="font-size: 30rpx;">{{item.Commenter.Nickname}}</view>
+            <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}</view>
             <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
           </view>
-          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.Commenter.Id}}">回复</view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}">回复</view>
         </view>
+        <view class="mess-cell" wx:if="{{item.Receiver.Id!=15}}">
+          <view style="position: relative;margin-right: 10px;">
+            <image src="{{item.CommenterId.Avatar}}" style="width: 50px; height: 50px; display: block" />
+          </view>
+          <view class="right">
+            <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了   {{item.Receiver.Nickname}}</view>
+            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+          </view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}">回复</view>
+        </view>
+
       </view>
 
 
