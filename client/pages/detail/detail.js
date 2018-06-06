@@ -124,7 +124,7 @@ Page({
         let comments = res.data.data
         //console.log(comments)
         for (let i in comments) {
-          //console.log(comments[i])
+          console.log(comments[i])
           temp.push(comments[i])
         }
         that.setData({

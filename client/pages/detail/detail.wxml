@@ -28,7 +28,9 @@
       </view>-->
 
       <view wx:for="{{existedComment}}">
-        <view class="mess-cell">
+        
+
+        <view class="mess-cell" wx:if="{{item.receiver==15}}">
           <view style="position: relative;margin-right: 10px;">
             <image src="{{item.Commenter.Avatar}}" style="width: 50px; height: 50px; display: block" />
           </view>
@@ -38,6 +40,17 @@
           </view>
           <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.Commenter.Id}}">回复</view>
         </view>
+        <view class="mess-cell" wx:else>
+          <view style="position: relative;margin-right: 10px;">
+            <image src="{{item.Commenter.Avatar}}" style="width: 50px; height: 50px; display: block" />
+          </view>
+          <view class="right">
+            <view style="font-size: 30rpx;">{{item.Commenter.Nickname}} to {{item.Receiver.Nickname}}</view>
+            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+          </view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.Commenter.Id}}">回复</view>
+        </view>
+
       </view>
 
 
