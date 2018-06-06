@@ -28,7 +28,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getLocation();
+    if(getApp().globalData.city===null && getApp().globalData.province===null){
+      this.getLocation();
+    }
+    util.showBusy("正在获取")
     var that = this
     qcloud.request({
       url: config.service.timelineUrl,
@@ -44,6 +47,7 @@ Page({
           })
           console.log(that.data.items)
         }
+        util.showSuccess("获取成功")
       },
       fail: err => {
         util.showModel("载入失败", err)
