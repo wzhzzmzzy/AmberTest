@@ -31,6 +31,9 @@ var config = {
         myOnTrans: `${host}/weapp/mine/ontrans`,
         myMessage: `${host}/weapp/message`,
 
+        // Location
+        myLocation: `${host}/weapp/location`,
+
         // 测试的请求地址，用于测试会话
         requestUrl: `${host}/weapp/user`,
 

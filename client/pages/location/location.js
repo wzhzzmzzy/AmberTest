@@ -1,4 +1,8 @@
 // pages/location/location.js
+import { request } from "../../vendor/wafer2-client-sdk/index";
+import { service } from "../../config";
+import util from "../../utils/util.js";
+
 Page({
 
   /**
@@ -7,22 +11,64 @@ Page({
   data: {
     currentProvince: null,
     currentCity: null,
-    university: ["南京大学", "苏州大学"]
+    university: []
+  },
+
+  /**
+   * Campus更新函数
+   */
+  updateLocation:function(event){
+    let campusid=event.target.dataset.id
+    request({
+      url:service.myLocation,
+      method:"POST",
+      data:{
+        id:campusid
+      },
+      success: function(res) {
+        util.showSuccess("更新成功")
+        wx.navigateBack()
+        console.log("更新成功：",res)
+      },
+      fail: function(err) {
+        console.error("更新失败",err)
+        util.showModel("T_T更新失败了")
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this;
     //pages.data内部不能使用函数，所以要在此处赋值
     this.setData({
       currentCity:getApp().globalData.city,
       currentProvince:getApp().globalData.province,
     })
-    //TODO:向qcloud请求当前地区的学校
-    // qcloud.request({
-
-    // })
+    //console.warn("URL:",service.myLocation+'?city='+that.data.currentCity)
+    util.showBusy("正在获取")
+    request({
+      url:service.myLocation+'?city='+that.data.currentCity,
+      method:"GET",
+      success: function(res) {
+        util.showSuccess("拿到啦！")
+        console.log("Colleges:",res)
+        //TODO:Parse res
+        let temp=[]
+        let dataset=res.data.data
+        for (let i in dataset){
+          temp.push(dataset[i])
+        }
+        that.setData({
+          university:temp
+        })
+      },
+      fail: function(err) {
+        console.error("请求学校失败：",err)
+      }
+    })
   },
   back: function(){
     wx.navigateBack();
@@ -59,7 +105,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.onLoad({});
   },
 
   /**
