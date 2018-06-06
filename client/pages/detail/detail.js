@@ -183,7 +183,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    /**
+     * TODO:下拉继续加载评论
+     */
   },
 
   /**
