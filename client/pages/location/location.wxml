@@ -5,6 +5,6 @@
     城市：{{currentCity}}    
   </view>
   <view wx:for="{{university}}" class='university' bindtap='back'>
-    <text>{{item}}</text>
+    <text bindtap="updateLocation" data-id="{{item.Id}}">{{item.Name}}</text>
   </view>
 </view>
