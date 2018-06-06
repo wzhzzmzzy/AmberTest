@@ -48,15 +48,16 @@ var addComment = async (ctx, next) => {
         "CommenterId": {
             "Id": userInfo[0]['Id']
         },
-        "Time": tk.wttn(),
+        "PublishTime": tk.wttn(),
         "Receiver":  {
-            "Id": body['to']
+            "Id": parseInt(body['to'])
         },
         "Context": body['text'],
         "ItemId": {
-            "Id": body['item']
+            "Id": parseInt(body['item'])
         }
     }
+    tk.log(query)
     await beego.insert("Comment", query).then(rep => {
         ctx.state.data = rep
         tk.log(rep)

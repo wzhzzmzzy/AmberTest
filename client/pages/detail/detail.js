@@ -53,26 +53,24 @@ Page({
     console.log(event)
     let to_id = event.target.dataset.id
     let commentBody = {
-      "id": that.data.itemID,
+      "item": that.data.itemID,
       "text": that.data.pushcomment,
       "to": to_id
     }
     console.log(commentBody)
     //TODO:POST the body
-    wx.request({
-      url: config.service.addComment + '/' + that.data.itemID,
+    qcloud.request({
+      url: config.service.addComment,
       method: "POST",
-      dataType:JSON,
-      data:commentBody,
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      login: true,
+      data: commentBody,
       success:function(res){
         if(res.statusCode==200){
           util.showSuccess("评论成功")
-          console.log("好像成功了"+res.statusCode+res.header+res.data)
+          console.log("好像成功了", res.statusCode, res.header, res.data)
+          that.onPullDownRefresh()
         }else{
-          console.warn("评论返回值不正确"+res.data)
+          console.warn("评论返回值不正确", res.data)
         }
       },
       fail:function(err){
