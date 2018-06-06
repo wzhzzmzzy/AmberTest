@@ -10,7 +10,6 @@ var catagory = async function (ctx, next) {
         'fields': 'Id'
     }
     await beego.select('Category', idQuery).then(async rep => {
-        tk.log('timeline:', rep)
         itemQuery = {
             'query': 'CategoryId:'+rep[0]['Id'],
             'offset': '' + page,

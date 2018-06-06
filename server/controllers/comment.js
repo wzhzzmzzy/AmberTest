@@ -57,10 +57,8 @@ var addComment = async (ctx, next) => {
             "Id": parseInt(body['item'])
         }
     }
-    tk.log(query)
     await beego.insert("Comment", query).then(rep => {
         ctx.state.data = rep
-        tk.log(rep)
     })
 }
 
@@ -76,7 +74,6 @@ var messages = async (ctx, next) => {
     }
     await beego.select("Comment", query).then(rep => {
         ctx.state.data = rep
-        tk.log(rep)
     })
 }
 

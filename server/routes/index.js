@@ -25,6 +25,10 @@ router.get('/message', validationMiddleware, controllers.comment.msg)
 
 router.get('/timeline', controllers.timeline.home)
 
+router.get('/location', validationMiddleware, controllers.location.get)
+
+router.post('/location', validationMiddleware, controllers.location.edit)
+
 router.use(mine.routes())
 
 module.exports = router

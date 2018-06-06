@@ -31,6 +31,5 @@ module.exports = async (ctx, next) => {
     }
     await beego.insert('Item', item).then(res => {
         ctx.state.data = "Publish Success"
-        tk.log(res)
     })
 }
