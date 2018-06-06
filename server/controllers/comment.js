@@ -14,19 +14,26 @@ var getComment = async (ctx, next) => {
         if (res === null) {
             return
         }
-        let id_set = res.map(item => item['CommenterId']['Id'])
+        let commenter_id_set = res.map(item => item['CommenterId']['Id'])
+        let receiver_id_set = res.map(item => item['Receiver']['Id'])
         rep = res
-        return await Promise.all(
-            id_set.map(id => beego.getSthById("Wechat_user", id))
-        )
+        return {
+            commenter: await Promise.all(commenter_id_set.map(id => beego.getSthById("Wechat_user", id))),
+            receiver: await Promise.all(receiver_id_set.map(id => beego.getSthById("Wechat_user", id)))
+        }
     }).then(res => {
         if (!res) {
             ctx.state.code = 1
             return
         }
-        for (let i in rep) for (let j in res) {
-            if (rep[i]['CommenterId']['Id'] === res[j]['Id']) {
-                rep[i]['Commenter'] = res[j]
+        for (let i in rep) for (let j in res['commenter']) {
+            if (rep[i]['CommenterId']['Id'] === res['commenter'][j]['Id']) {
+                rep[i]['CommenterId'] = res['commenter'][j]
+            }
+        }
+        for (let i in rep) for (let j in res['receiver']) {
+            if (rep[i]['Receiver']['Id'] === res['receiver'][j]['Id']) {
+                rep[i]['Receiver'] = res['receiver'][j]
             }
         }
         ctx.state.data = rep
