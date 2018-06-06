@@ -28,6 +28,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getLocation();
     var that = this
     qcloud.request({
       url: config.service.timelineUrl,
@@ -50,6 +51,59 @@ Page({
       }
     })
   },
+
+  getLocation: function () {
+    var page = this
+    wx.getLocation({
+      type: 'wgs84',   //<span class="comment" style="margin:0px;padding:0px;border:none;">默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标</span><span style="margin:0px;padding:0px;border:none;"> </span>  
+      success: function (res) {
+        // success    
+        var longitude = res.longitude
+        var latitude = res.latitude
+        page.loadCity(longitude, latitude)
+      }
+    })
+  },
+  loadCity: function (longitude, latitude) {
+    var page = this
+    wx.request({
+      url: 'https://api.map.baidu.com/geocoder/v2/?ak=na1ROQiIIjxHvXbhNmRoVj4gURSUGlEE&location=' + latitude + ',' + longitude + '&output=json',
+      data: {},
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        // success 
+        console.log(res);
+        var city = res.data.result.addressComponent.city;
+        var province = res.data.result.addressComponent.province;
+        getApp().globalData.city = city;
+        getApp().globalData.province = province;
+        console.log(getApp().globalData.city);
+        page.openAlert()
+      },
+      fail: function () {
+        getApp().globalData.city = "location failed";
+        getApp().globalData.province = "location failed";
+      },
+
+    })
+  },
+  openAlert: function () {
+    wx.showModal({
+      content: '请根据您所在的省份，选择一所高校，并在该校范围内进行交易',
+      showCancel: false,
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          wx.navigateTo({
+            url: '../location/location',
+          })
+        }
+      }
+    });
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
