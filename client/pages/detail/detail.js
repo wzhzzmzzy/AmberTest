@@ -50,7 +50,6 @@ Page({
   //start sendComment
   sendComment: function (event) {
     var that = this;
-
     console.log(event)
     let to_id = event.target.dataset.id
     let commentBody = {
