@@ -105,7 +105,7 @@ Page({
         }
       })
     }
-    item.imageUrl = JSON.stringify(item.imageUrl)
+    item.imageUrl = item.imageUrl
     qcloud.request({
       url: config.service.publishUrl,
       method: 'POST',
