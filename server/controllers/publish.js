@@ -13,8 +13,6 @@ module.exports = async (ctx, next) => {
       beego.getUserByOid(userInfo['openId']),
       beego.select('Category', categoryQuery)
     ])
-    tk.log(Ids)
-    tk.log(item)
     item = {
       Price: parseInt(item.price),
       Detail: item.detail,

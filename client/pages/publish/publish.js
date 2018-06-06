@@ -86,7 +86,7 @@ Page({
     for (let i in this.data.images) {
       let file = this.data.images[i]
       let tmp = this.data.images[i].split('tmp/')[1]
-      this.addImageUrl(tmp)
+      item.imageUrl.push(tmp)
       wx.uploadFile({
         url: config.service.uploadUrl,
         filePath: file,
@@ -105,7 +105,6 @@ Page({
         }
       })
     }
-    item.imageUrl = item.imageUrl
     qcloud.request({
       url: config.service.publishUrl,
       method: 'POST',
