@@ -1,0 +1,10 @@
+<!--pages/location/location.wxml-->
+<view class='content'>
+  <view class='head'>
+    当前省份：{{currentProvince}}    
+    城市：{{currentCity}}    
+  </view>
+  <view wx:for="{{university}}" class='university' bindtap='back'>
+    <text>{{item}}</text>
+  </view>
+</view>

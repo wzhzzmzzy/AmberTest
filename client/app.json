@@ -15,7 +15,8 @@
     "pages/mine/setup/setup",
     "pages/mine/aboutus/aboutus",
     "pages/mine/info/info",
-    "pages/mine/ontrans/index"
+    "pages/mine/ontrans/index",
+    "pages/location/location"
   ],
   "window":{
     "backgroundTextStyle":"light",

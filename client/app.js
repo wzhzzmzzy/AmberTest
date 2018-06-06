@@ -7,7 +7,9 @@ var util = require('utils/util.js')
 App({
   globalData: {
     userInfo: null,
-    auth: {}
+    auth: {},
+    city:null,
+    province:null,
   },
   onLaunch: function () {
     var that = this

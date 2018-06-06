@@ -1,0 +1,17 @@
+/* pages/location/location.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.head{
+  margin: 10%;
+}
+.university{
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #888888;
+  height:70rpx;
+}
+.university text{
+  margin-left:10%;
+}
