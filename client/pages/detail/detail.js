@@ -16,7 +16,7 @@ Page({
     collectcomment: null,
     isReply: false,
     inputFocus:false,
-    receiver:"15"
+    receiver:"15"//default null replyer
   },
 
   /**
@@ -52,6 +52,9 @@ Page({
     var that = this;
     console.log(event)
     let to_id = event.target.dataset.id
+    if(event.target.dataset.isReply==false){
+      to_id=15
+    }
     let commentBody = {
       "item": that.data.itemID,
       "text": that.data.pushcomment,
