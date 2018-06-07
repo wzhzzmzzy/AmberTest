@@ -1,5 +1,6 @@
 {
   "pages":[
+    
     "pages/home/home",
     
     "pages/catagory/catagory",
@@ -9,6 +10,7 @@
     "pages/message/message",
 
     "pages/detail/detail",
+    
 
     "pages/mine/mine",
     "pages/mine/items/index",
@@ -16,7 +18,8 @@
     "pages/mine/aboutus/aboutus",
     "pages/mine/info/info",
     "pages/mine/ontrans/index",
-    "pages/location/location"
+    "pages/location/location",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
