@@ -1,2 +1,13 @@
-<!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<!--此页面添加入最新版本-->
+<!--按说明文档上的内容实现即可-->
+<view class='content'>
+  <view class='single_message'>
+    <text>您收到一条新消息</text>
+    <view class='unread'>未读</view>
+  </view>
+
+  <view class='single_message'>
+    <text>您收到一条新消息</text>
+    <view class='unread'>未读</view>
+  </view>
+</view>

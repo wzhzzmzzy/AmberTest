@@ -73,8 +73,13 @@ Page({
    */
   onLoad: function (options) {
     let that=this;
+    let islogined=false
+    if (getApp().globalData.userInfo!=null){
+      islogined=true
+    }
     that.setData({
-      userInfo: getApp().globalData.userInfo
+      userInfo: getApp().globalData.userInfo,
+      logged:islogined
     })
     //pages.Data内部不能使用函数，所以要在此处赋值
     this.setData({

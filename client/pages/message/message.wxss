@@ -1,1 +1,33 @@
 /* pages/message/message.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+}
+.single_message{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  justify-content: space-between;
+}
+.single_message text{
+  margin-top: 20rpx;
+  margin-left:20rpx; 
+  font-size: 35rpx;
+}
+.unread{
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  height: 40rpx;
+  width: rpx;
+  display:inline-block;
+  padding:.15em .4em;
+  min-width:8px;
+  border-radius:18px;
+  background-color:#e64340;
+  color:#fff;
+  line-height:1.2;
+  text-align:center;
+  font-size:12px;
+  vertical-align:middle;
+}
