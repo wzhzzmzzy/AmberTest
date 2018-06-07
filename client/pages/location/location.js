@@ -2,13 +2,17 @@
 import { request } from "../../vendor/wafer2-client-sdk/index";
 import { service } from "../../config";
 import util from "../../utils/util.js";
-
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
+    logged: false,
+    authInfo: app.globalData['auth']['scope.userinfo'] || false,
     currentProvince: null,
     currentCity: null,
     university: []
@@ -37,38 +41,75 @@ Page({
     })
   },
 
+  onGetUserInfo: function (e) {
+    var that=this
+    // 修改全局变量
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      logged: true
+    })
+    // 向后端确认登录
+    qcloud.login({
+      success(result) {
+        if (!result) {
+          qcloud.request({
+            url: service.requestUrl,
+            login: true
+          })
+        }
+        that.onLoad({})
+      },
+      fail(error) {
+        util.showModel('登录失败', error)
+        console.log('登录失败', error)
+      }
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that=this;
-    //pages.data内部不能使用函数，所以要在此处赋值
+    let islogined=false
+    if (getApp().globalData.userInfo!=null){
+      islogined=true
+    }
+    that.setData({
+      userInfo: getApp().globalData.userInfo,
+      logged:islogined
+    })
+    //pages.Data内部不能使用函数，所以要在此处赋值
     this.setData({
-      currentCity:getApp().globalData.city,
-      currentProvince:getApp().globalData.province,
+      currentCity: getApp().globalData.city,
+      currentProvince: getApp().globalData.province,
     })
     //console.warn("URL:",service.myLocation+'?city='+that.data.currentCity)
     util.showBusy("正在获取")
     request({
-      url:service.myLocation+'?city='+that.data.currentCity,
-      method:"GET",
-      success: function(res) {
+      url: service.myLocation + '?city=' + that.data.currentCity,
+      method: "GET",
+      success: function (res) {
         util.showSuccess("拿到啦！")
-        console.log("Colleges:",res)
+        console.log("Colleges:", res)
         //TODO:Parse res
-        let temp=[]
-        let dataset=res.data.data
-        for (let i in dataset){
+        let temp = []
+        let dataset = res.data.data
+        for (let i in dataset) {
           temp.push(dataset[i])
         }
         that.setData({
-          university:temp
+          university: temp
         })
       },
-      fail: function(err) {
-        console.error("请求学校失败：",err)
+      fail: function (err) {
+        util.showModel("您还未登录","请点击上方登录按钮")
+        console.error("请求学校失败：", err)
       }
     })
+    
   },
   back: function(){
     wx.navigateBack();
