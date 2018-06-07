@@ -1,13 +1,16 @@
 <!--此页面添加入最新版本-->
 <!--按说明文档上的内容实现即可-->
 <view class='content'>
-  <view class='single_message'>
-    <text>您收到一条新消息</text>
-    <view class='unread'>未读</view>
-  </view>
-
-  <view class='single_message'>
-    <text>您收到一条新消息</text>
-    <view class='unread'>未读</view>
-  </view>
+  <block wx:if="{{hasmessage===1}}">
+    没有更多消息了
+  </block>
+  <block wx:if="{{hasmessage===0}}">
+    <block wx:for="{{mycomments}}" >
+      <view class='single_message' bindtap="toItem" data-index="{{index}}">
+      <image src="{{item.CommenterId.Avatar}}" style="width: 50px; height: 50px; display: block" />
+      <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了 您</view>
+      </view>
+    </block>
+  </block>
+  
 </view>

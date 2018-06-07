@@ -30,17 +30,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo!=null) {
+    // if(!app.globalData.auth.){
+    //   wx.navigateTo({
+    //     url: '/pages/',
+    //     success: function(res){
+    //       // success
+    //     },
+    //     fail: function() {
+    //       // fail
+    //     },
+    //     complete: function() {
+    //       // complete
+    //     }
+    //   })
+    // }
+    //console.error("__________________: ",app.globalData['auth']['scope.userInfo'])
+    if (app.globalData['auth']['scope.userInfo']===false){
+      //util.showModel("haha","你tm没登录")
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+    console.error("auth: ",app.globalData['auth'])
+    if (app.globalData['auth']['scope.userInfo']) {
       this.setData({
         userInfo: app.globalData.userInfo,
         logged: true
       })
     }else{
       console.error("Not Logined")
-    }
-    if(getApp().globalData.city===null && getApp().globalData.province===null){
-      this.getLocation();
-    }
+    }   
     util.showBusy("正在获取")
     var that = this
     qcloud.request({

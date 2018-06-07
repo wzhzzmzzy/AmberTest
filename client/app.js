@@ -7,7 +7,9 @@ var util = require('utils/util.js')
 App({
   globalData: {
     userInfo: null,
-    auth: {},
+    auth: {
+      'scope.userInfo':false
+    },
     city:null,
     province:null,
   },
@@ -18,7 +20,7 @@ App({
     wx.getSetting({
       success: function(res){
         that.globalData.auth = res.authSetting;
-        console.log(that.globalData['auth'])
+        console.error("auth: ",that.globalData['auth'])
         // 如果已经授权，就加载用户信息
         if (that.globalData['auth']['scope.userInfo']) {
           console.log("正在加载用户信息...")
@@ -32,6 +34,7 @@ App({
                   login: true,
                   success: function(result) {
                     that.globalData.userInfo = result.data.data
+                    console.log("App.js: ",result)
                   }
                 })
               }
