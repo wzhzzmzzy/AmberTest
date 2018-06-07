@@ -1,6 +1,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+var home = require('../home/home.js')
 
 Page({
   data: {
@@ -116,12 +117,14 @@ Page({
       success: function(res) {
         util.showSuccess("上传成功！")
         console.log(res)
-        wx.navigateBack()
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
       },
       fail: function(err) {
         util.showModel("上传失败", err)
         console.log(err)
-      }
+      },
     })
   }
 })
