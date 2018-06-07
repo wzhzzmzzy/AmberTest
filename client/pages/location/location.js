@@ -100,6 +100,7 @@ Page({
         })
       },
       fail: function (err) {
+        util.showModel("您还未登录","请点击上方登录按钮")
         console.error("请求学校失败：", err)
       }
     })
