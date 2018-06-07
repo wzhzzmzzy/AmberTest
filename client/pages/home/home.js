@@ -3,6 +3,8 @@ var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
 
+const app = getApp()
+
 Page({
 
   /**
@@ -28,6 +30,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.userInfo!=null) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        logged: true
+      })
+    }else{
+      console.error("Not Logined")
+    }
     if(getApp().globalData.city===null && getApp().globalData.province===null){
       this.getLocation();
     }
