@@ -9,6 +9,7 @@
   height:100%;
 }
 .section2{
+  font-size: 40rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -19,10 +20,11 @@
   margin-left: 10%;
   width:80%;
   height: 400rpx;
+  font-size: 30rpx;
 }
 .newreply{
   text-align: right;
-  font-size: 40rpx;
+  font-size: 30rpx;
   color: #aaaaaa;
 }
 .section4{
@@ -34,7 +36,7 @@
   flex-direction: row;
   justify-content: center;
   color: #33cc66;
-  font-size: 50rpx;
+  font-size: 45rpx;
   margin-top: 10rpx;
 }
 .section4_title image{
@@ -49,7 +51,7 @@
   height: 100rpx;
 }
 .section5{
-  background-color: #ffffff;
+  background-color: #eeeeee;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -62,8 +64,10 @@
 .section5 input{
   margin-top: 20rpx;
   width:70%;
-  border-bottom: 1rpx solid #aaaaaa;
-  height: 50rpx;
+  border: 1rpx solid #aaaaaa;
+  height: 60rpx;
+  background-color: #ffffff;
+  border-radius: 7%;
 }
 .section5 view{
   margin-top: 20rpx;

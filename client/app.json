@@ -3,10 +3,9 @@
     "pages/home/home",
     "pages/catagory/catagory",
     "pages/catagory/items/index",
-
     "pages/publish/publish",
     "pages/message/message",
-
+    "pages/location/location",
     "pages/detail/detail",
 
     "pages/mine/mine",
@@ -15,7 +14,6 @@
     "pages/mine/aboutus/aboutus",
     "pages/mine/info/info",
     "pages/mine/ontrans/index",
-    "pages/location/location",
     "pages/login/login"
     
   ],
