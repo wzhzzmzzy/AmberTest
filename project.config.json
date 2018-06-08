@@ -4,7 +4,7 @@
 	"miniprogramRoot": "./client",
 	"qcloudRoot": "./server",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,5 +12,6 @@
 	},
 	"appid": "wx4d4b8d11fe33b28a",
 	"projectname": "AmberTest",
+	"libVersion": "1.9.94",
 	"condition": {}
 }
