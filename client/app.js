@@ -49,9 +49,6 @@ App({
         }
         else{
           //util.showModel("haha","你tm没登录")
-          wx.authorize({
-            scope: '',
-          })
           wx.navigateTo({
             url: '../login/login'
           })
