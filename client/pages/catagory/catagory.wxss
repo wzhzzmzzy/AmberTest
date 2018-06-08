@@ -1,37 +1,35 @@
 /* pages/catagory/catagory.wxss */
 .container{
-  background-image:url(../../images/catagory/background.jpg);
   display:flex;
   flex-direction: column;
   align-items: center;
-  height: 500px;
+  height: 1000rpx;
 }
 .row{
   display:flex;
   flex-direction: row;
   justify-content: center;
-  height: 150px;
+  height: 600rpx;
 }
 .single{
-  margin: 10px;
+  height: 230rpx;
+  margin: 20rpx;
   display: flex;
   flex-direction: row;
   border-bottom:1rpx solid #33cc66;
   border-right: 1rpx solid #33cc66;
 }
 .single image{
-  width: 90px;
-  height: 90px;
-  margin: 10px;
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
 }
 .single text{
-  margin: 5px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
   width: 1em;
- font-family: '苹方-简', 'ubuntu';
-  src: 
-    url('http://weapp.liontao.xin:7001/fonts/PingFang.ttc'),
-    url('http://weapp.liontao.xin:7001/fonts/ubuntu.ttf');
   text-align: middle;
   line-height: 20px;
-  margin-top: 15px;
+  margin-top: 30rpx;
 }

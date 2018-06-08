@@ -12,21 +12,22 @@
     <image src='../../../images/home/search_1.png' bindtap='search'></image>
   </view>
   <view class='seperate1'></view>
-  <view class='hr'>
-    <view class='item'>
-      <view wx:if="{{noItem===false}}">
-        <view wx:for="{{items}}" data-index="{{index}}" class='productInfo' bindtap='toItem'>
-          <text>商品名称：{{item.Title}}</text>
-          <text>最后更新：{{item.RefreshTime}}</text>
-          <text>商品详情：{{item.Detail}}</text>
-          <view class='seperate1'></view>
+  <view wx:if="{{noItem===false}}" class='hr'>
+    <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
+      <view class='img'>
+        <image src='https://www.baidu.com/img/540%20258_c622d80176946df7f7b8d1997edf57d4.gif'></image>
+      </view>
+      <view class='productInfo' >
+        <view class='productInfo_titleandprice'>
+          <text class="prdtitle">名称：{{item.Title}}</text>
+          <text class="price">￥{{item.Price}}</text>
         </view>
-      </view>
-      <view wx:elif="{{noItem===true}}">
-        <text>还没有发布的商品哦！</text>
-      </view>
-      <view wx:else></view>
-      <view class='seperate1'></view>
+        <text class='discribe'>描述：{{item.Detail}}</text>
+      </view>      
     </view>
   </view>
+  <view wx:elif="{{noItem===true}}">
+    <text>还没有商品哦！</text>
+  </view>
+  <view wx:else></view>
 </view>
