@@ -31,7 +31,9 @@ Page({
       },
       success: function(res) {
         util.showSuccess("更新成功")
-        wx.navigateBack()
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
         console.log("更新成功：",res)
       },
       fail: function(err) {

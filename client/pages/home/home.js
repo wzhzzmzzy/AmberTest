@@ -57,9 +57,13 @@ Page({
         userInfo: app.globalData.userInfo,
         logged: true
       })
+      if (app.globalData.city === null && app.globalData.province === null) {
+        this.getLocation()
+      }
     }else{
       console.error("Not Logined")
-    }   
+    }  
+
     util.showBusy("正在获取")
     var that = this
     qcloud.request({
@@ -142,7 +146,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**
