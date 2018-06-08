@@ -23,7 +23,9 @@ Page({
    * Campus更新函数
    */
   updateLocation:function(event){
-    getApp().globalData.university=event.target.dataset.university
+    console.error("GET CAMPUS: ", event.target.dataset.campus)
+    getApp().globalData.campus=event.target.dataset.campus
+    console.error("APP CAMPUS: ", getApp().globalData.campus)
     let campusid=event.target.dataset.id
     request({
       url:service.myLocation,
@@ -114,9 +116,6 @@ Page({
       }
     })
     
-  },
-  back: function(){
-    wx.navigateBack();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -75,16 +75,7 @@ var getItem = async function (query) {
         if (rep === null || !rep.length) {
             return null
         }
-        let items = []
-        for (let item in rep) {
-            let tmp = {}
-            tmp.Id = rep[item].Id
-            tmp.Detail = rep[item].Detail
-            tmp.Title = rep[item].Title
-            tmp.RefreshTime = rep[item].RefreshTime
-            items.push(tmp)
-        }
-        return items
+        return rep
     })
 }
 

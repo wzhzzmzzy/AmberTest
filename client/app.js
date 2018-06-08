@@ -12,7 +12,7 @@ App({
     },
     city:null,
     province:null,
-    university:null
+    campus:null
   },
   onLaunch: function () {
     var that = this
@@ -49,12 +49,11 @@ App({
         }
         else{
           //util.showModel("haha","你tm没登录")
-          wx.authorize({
-            scope: '',
+          console.log("Redirecting to login")
+          wx.reLaunch({
+            url: 'pages/login/login',
           })
-          wx.navigateTo({
-            url: '../login/login'
-          })
+          console.log("should be redirected")
         }
       }
     })

@@ -6,6 +6,8 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
+    placeholder:"说点什么",
+    pushcomment:'',
     receiver: null,
     itemID: null,
     imgUrls: [],
@@ -27,6 +29,7 @@ Page({
     this.setData({
       pushcomment: e.detail.value
     })
+    console.log(this.data.pushcomment)
   },
   //complete pushComment
 
@@ -38,7 +41,8 @@ Page({
     that.setData({
       receiver:event.target.dataset.id,
       isReply:true,
-      inputFocus:true
+      inputFocus:true,
+      placeholder: "回复给 "+event.target.dataset.placeholder
     })
     console.log("即将回复给： "+that.data.receiver)
   },
@@ -61,7 +65,6 @@ Page({
       "to": to_id
     }
     console.log(commentBody)
-    //TODO:POST the body
     qcloud.request({
       url: config.service.addComment,
       method: "POST",
@@ -72,6 +75,9 @@ Page({
           util.showSuccess("评论成功")
           console.log("好像成功了", res.statusCode, res.header, res.data)
           that.onPullDownRefresh()
+          that.setData({
+            pushcomment:''
+          })
         }else{
           console.warn("评论返回值不正确", res.data)
         }
