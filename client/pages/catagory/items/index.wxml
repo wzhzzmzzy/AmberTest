@@ -9,7 +9,7 @@
       <input type='text' placeholder='请输入关键词' placeholder-class='holder' name='keyword' bindinput="getInput" ></input>
       <view class='line' ></view>
     </view>
-    <image src='../../../images/home/search.png' bindtap='search'></image>
+    <image src='../../../images/home/search_1.png' bindtap='search'></image>
   </view>
   <view class='seperate1'></view>
   <view class='hr'>
@@ -23,7 +23,7 @@
         </view>
       </view>
       <view wx:elif="{{noItem===true}}">
-        <text>你没有正在交易中的商品</text>
+        <text>还没有发布的商品哦！</text>
       </view>
       <view wx:else></view>
       <view class='seperate1'></view>

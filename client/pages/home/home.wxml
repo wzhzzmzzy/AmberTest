@@ -11,18 +11,22 @@
   <view class='hr'>
     <view class='item'>
       <view wx:if="{{noItem===false}}">
+        <view class='img'>
+          <image src='../../images/home/search_1.png'></image>
+        </view>
         <view wx:for="{{items}}" data-index="{{index}}" class='productInfo' bindtap='toItem'>
-          <text>商品名称：{{item.Title}}</text>
-          <text>最后更新：{{item.RefreshTime}}</text>
-          <text>商品详情：{{item.Detail}}</text>
-          <view class='seperate1'></view>
+          <view class='productInfo_titleandprice'>
+            <text>{{item.Title}}</text>
+            <text>￥{{item.Price}}</text>
+          </view>
+          <text>发布时间：{{item.RefreshTime}}</text>
         </view>
       </view>
       <view wx:elif="{{noItem===true}}">
         <text>你没有正在交易中的商品</text>
       </view>
       <view wx:else></view>
-      <view class='seperate1'></view>
     </view>
+    <view class='seperate1'></view>
   </view>
 </view>

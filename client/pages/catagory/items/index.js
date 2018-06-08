@@ -21,8 +21,8 @@ Page({
     'electronic': "数码产品",
     'vchicle': "代步工具",
     'snack': "休闲零食",
-    'stationery': '文体用品',
-    'other': "其它"
+    'stationary': '文体用品',
+    'other': "其他"
   },
 
   getInput: function (e) {
