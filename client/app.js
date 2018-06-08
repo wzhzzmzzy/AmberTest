@@ -49,9 +49,11 @@ App({
         }
         else{
           //util.showModel("haha","你tm没登录")
-          wx.navigateTo({
-            url: '../login/login'
+          console.log("Redirecting to login")
+          wx.reLaunch({
+            url: 'pages/login/login',
           })
+          console.log("should be redirected")
         }
       }
     })

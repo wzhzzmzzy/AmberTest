@@ -17,6 +17,7 @@
     "pages/mine/ontrans/index",
     "pages/location/location",
     "pages/login/login"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
