@@ -12,7 +12,7 @@ App({
     },
     city:null,
     province:null,
-    university:null
+    campus:null
   },
   onLaunch: function () {
     var that = this
