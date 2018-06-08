@@ -32,21 +32,6 @@ Page({
    */
   onLoad: function (options) {
     var that=this
-    // if(!app.globalData.auth.){
-    //   wx.navigateTo({
-    //     url: '/pages/',
-    //     success: function(res){
-    //       // success
-    //     },
-    //     fail: function() {
-    //       // fail
-    //     },
-    //     complete: function() {
-    //       // complete
-    //     }
-    //   })
-    // }
-    //console.error("__________________: ",app.globalData['auth']['scope.userInfo'])
     console.error("Home auth: ",app.globalData['auth'])
     if (app.globalData['auth']['scope.userInfo']===true) {
       that.setData({
@@ -88,7 +73,7 @@ Page({
   getLocation: function () {
     var page = this
     wx.getLocation({
-      type: 'wgs84',   //<span class="comment" style="margin:0px;padding:0px;border:none;">默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标</span><span style="margin:0px;padding:0px;border:none;"> </span>  
+      type: 'wgs84',
       success: function (res) {
         // success    
         var longitude = res.longitude
