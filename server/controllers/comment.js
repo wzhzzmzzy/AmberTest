@@ -74,13 +74,28 @@ var messages = async (ctx, next) => {
     let user = ctx.state.$wxInfo.userinfo
     user = await beego.getUserByOid(user['openId'])
     let query = {
-        'query': "CommentId:"+user['Id'],
-        'fields': "ItemId",
+        'query': "Receiver:"+user[0]['Id'],
+        'fields': "ItemId,CommenterId",
         'sortby': "PublishTime",
         'order': "desc"
     }
-    await beego.select("Comment", query).then(rep => {
-        ctx.state.data = rep
+    var res = {}
+    await beego.select("Comment", query).then(async rep => {
+        if (rep === null || !rep.length) {
+            return
+        }
+        res = rep
+        let id_set = rep.map(item => item['CommenterId']['Id'])
+        return await Promise.all(id_set.map(id => beego.getSthById("Wechat_user", id)))
+    }).then(rep => {
+        if (!rep) {
+            ctx.state.code = 1
+            return
+        }
+        for (let i in res) {
+            res[i]['CommenterId'] = rep[i]
+        }
+        ctx.state.data = res
     })
 }
 
