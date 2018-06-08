@@ -34,7 +34,7 @@
   flex-direction: column;
 }
 .item{
-  height:400rpx;
+  height:200rpx;
   display: flex;
   flex-direction: row;
 }
@@ -49,15 +49,19 @@
 .productInfo{
   display: flex;
   flex-direction: column;
-  width:400rpx;
+  margin:30rpx;
 }
 .productInfo_titleandprice{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+}
+.title{
   width:400rpx;
+}
+.price{
+  width:200rpx;
 }
 .productInfo text{
   font-size: 17px;
-  margin: 10px;
+  margin-top: 20rpx;
 }
