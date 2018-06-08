@@ -1,6 +1,5 @@
 {
   "pages":[
-    
     "pages/home/home",
     
     "pages/catagory/catagory",
@@ -9,8 +8,7 @@
     "pages/publish/publish",
     "pages/message/message",
 
-    "pages/detail/detail",
-    
+  "pages/detail/detail",
 
     "pages/mine/mine",
     "pages/mine/items/index",
@@ -31,7 +29,7 @@
   "tabBar": {
     "backgroundColor": "#ffffff",
     "color": "#000000",
-    "selectedColor": "#b33a3a",
+    "selectedColor": "#33cc66",
     "list": [
       {
         "pagePath": "pages/home/home",
