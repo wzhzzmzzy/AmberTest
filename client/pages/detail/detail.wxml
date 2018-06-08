@@ -10,11 +10,11 @@
     </swiper>
   </view>
   <view class='section2'>
-    <view>{{title}}</view>
+    <view>商品名称：{{title}}</view>
     <view>￥{{price}}</view>
   </view>
   <view class='section3'>
-    <view>{{discription}}</view>
+    <view>商品描述：{{discription}}</view>
   </view>
   <view class='newreply' bindtap="sendReply" data-isReply="false" data-id="15">添加新评论</view>
   <view class='section4'>
@@ -36,7 +36,7 @@
           </view>
           <view class="right">
             <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}</view>
-            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+            <view style="font-size: 34rpx;color: #888888;">{{item.Context}}</view>
           </view>
           <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}">回复</view>
         </view>
