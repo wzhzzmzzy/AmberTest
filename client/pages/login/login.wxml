@@ -21,15 +21,18 @@
         <block wx:if="{{logged}}">
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
           <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          <text class="page-body-text">您的城市：{{province}}</text>
+          <text class="page-body-text">您的学校：{{city}}</text>
         </block>
         <block wx:else>
-          <text class="page-body-text">您未获取</text>
+          <text class="page-body-text">您未登录</text>
           <text class="page-body-text">请点击绿色按钮可获取用户头像及昵称</text>
+          <button class="page-body-button" type="primary" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" >点我登录</button>
         </block>
         
       </view>
       <view class="page-body-buttons">
-        <button class="page-body-button" type="primary" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" >点我登录</button>
+        
         <!--<button class="page-body-button" bindtap="clear">清空</button>-->
       </view>
     </view>
