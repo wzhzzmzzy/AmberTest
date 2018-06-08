@@ -12,6 +12,7 @@ App({
     },
     city:null,
     province:null,
+    university:null
   },
   onLaunch: function () {
     var that = this
@@ -19,8 +20,10 @@ App({
     // 将用户授权信息加载到 globalData['auth']
     wx.getSetting({
       success: function(res){
-        that.globalData.auth = res.authSetting;
-        console.error("auth: ",that.globalData['auth'])
+        getApp().globalData.auth = res.authSetting;
+        console.error("App authsetting:", res);
+        console.error("App auth: ",getApp().globalData['auth'])
+        
         // 如果已经授权，就加载用户信息
         if (that.globalData['auth']['scope.userInfo']) {
           console.log("正在加载用户信息...")
@@ -42,6 +45,15 @@ App({
             fail: err => {
               console.log('Get User Failed', err)
             }
+          })
+        }
+        else{
+          //util.showModel("haha","你tm没登录")
+          wx.authorize({
+            scope: '',
+          })
+          wx.navigateTo({
+            url: '../login/login'
           })
         }
       }

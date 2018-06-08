@@ -22,7 +22,8 @@
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
           <text class="userinfo-nickname">{{userInfo.nickName}}</text>
           <text class="page-body-text">您的城市：{{province}}</text>
-          <text class="page-body-text">您的学校：{{city}}</text>
+          <text class="page-body-text">您的学校：{{university}}</text>
+          <text class="userinfo-nickname">您所在的大学：{{university}}</text>
         </block>
         <block wx:else>
           <text class="page-body-text">您未登录</text>

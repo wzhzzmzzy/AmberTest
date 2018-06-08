@@ -14,7 +14,8 @@ Page({
     userInfo: null,
     logged: false,
     city:app.globalData.city,
-    province:app.globalData.province
+    province:app.globalData.province,
+    university: app.globalData.university
   },
 
 
@@ -36,10 +37,50 @@ Page({
           })
         }
         that.onLoad({})
-        wx.switchTab({
-          url: '/pages/home/home',
-          success: function(res){
-            util.showSuccess("登录成功")
+        wx.getSetting({
+          success: function (res) {
+            getApp().globalData.auth = res.authSetting;
+            console.error("App authsetting:", res);
+            console.error("App auth: ", getApp().globalData['auth'])
+
+            // 如果已经授权，就加载用户信息
+            if (getApp().globalData['auth']['scope.userInfo']) {
+              console.log("正在加载用户信息...")
+              qcloud.login({
+                success: function (res) {
+                  if (res) {
+                    that.globalData.userInfo = res
+                  } else {
+                    qcloud.request({
+                      url: config.service.requestUrl,
+                      login: true,
+                      success: function (result) {
+                        that.globalData.userInfo = result.data.data
+                        console.log("App.js: ", result)
+                      }
+                    })
+                  }
+                  wx.switchTab({
+                    url: '/pages/home/home',
+                    success: function (res) {
+                      util.showSuccess("登录成功")
+                    }
+                  })
+                },
+                fail: err => {
+                  console.log('Get User Failed', err)
+                }
+              })
+            }
+            else {
+              //util.showModel("haha","你tm没登录")
+              wx.authorize({
+                scope: '',
+              })
+              wx.navigateTo({
+                url: '../login/login'
+              })
+            }
           }
         })
       },

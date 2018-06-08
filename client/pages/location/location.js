@@ -4,6 +4,7 @@ import { service } from "../../config";
 import util from "../../utils/util.js";
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 const app = getApp()
+
 Page({
 
   /**
@@ -22,6 +23,7 @@ Page({
    * Campus更新函数
    */
   updateLocation:function(event){
+    getApp().globalData.university=event.target.dataset.university
     let campusid=event.target.dataset.id
     request({
       url:service.myLocation,
