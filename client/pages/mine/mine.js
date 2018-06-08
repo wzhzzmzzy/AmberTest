@@ -10,6 +10,11 @@ Page({
     logged: false,
     authInfo: app.globalData['auth']['scope.userinfo'] || false
   },
+  toLogin:function(){
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
   onGetUserInfo: function (e) {
     // 修改全局变量
     app.globalData.userInfo = e.detail.userInfo

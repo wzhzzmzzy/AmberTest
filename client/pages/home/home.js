@@ -17,7 +17,8 @@ Page({
       config.service.imageUrl + '3.jpg'
     ],
     items: [],
-    noItem: null
+    noItem: null,
+    userInfo:null
   },
 
   toItem: function(e){

@@ -12,7 +12,9 @@ Page({
   data: {
     hasUserInfo:false,
     userInfo: null,
-    logged: false
+    logged: false,
+    city:app.globalData.city,
+    province:app.globalData.province
   },
 
 
@@ -52,7 +54,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+    if (app.globalData.city === null && app.globalData.province === null){
+      that.setData({
+        city:"未指定",
+        province:"未指定"
+      })
+    }
+    if (app.globalData['auth']['scope.userInfo']){
+      console.log("你已经登录了")
+      that.setData({
+        hasUserInfo:true,
+        userInfo: app.globalData.userInfo,
+        logged:true
+      })
+    }
     console.error(this.data.hasUserInfo)
+    console.error(this.data.userInfo)
   },
 
   /**
