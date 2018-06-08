@@ -8,24 +8,22 @@
       </block> 
     </swiper>
   </view>
-  <view >
-    <view wx:if="{{noItem===false}}" class='hr'>
-      <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
-        <view class='img'>
-          <image src='../../images/home/search_1.png'></image>
-        </view>
-        <view class='productInfo' >
-          <view class='productInfo_titleandprice'>
-            <text class="title">名称：{{item.Title}}</text>
-            <text class="price">￥{{item.Price}}</text>
-          </view>
-          <text class='discribe'>描述：{{item.Detail}}</text>
-        </view>      
+  <view wx:if="{{noItem===false}}" class='hr'>
+    <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
+      <view class='img'>
+        <image src='../../images/home/search_1.png'></image>
       </view>
+      <view class='productInfo' >
+        <view class='productInfo_titleandprice'>
+          <text class="title">名称：{{item.Title}}</text>
+          <text class="price">￥{{item.Price}}</text>
+        </view>
+        <text class='discribe'>描述：{{item.Detail}}</text>
+      </view>      
     </view>
-    <view wx:elif="{{noItem===true}}">
-      <text>你没有正在交易中的商品</text>
-    </view>
-    <view wx:else></view>
   </view>
+  <view wx:elif="{{noItem===true}}">
+    <text>还没有商品哦！</text>
+  </view>
+  <view wx:else></view>
 </view>

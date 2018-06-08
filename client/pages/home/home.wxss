@@ -54,10 +54,12 @@
 .title{
   font-size: 36rpx;
   width:400rpx;
+  margin-top: 20rpx;
 }
 .price{
   font-size: 36rpx;
   width:200rpx;
+  margin-top: 20rpx;
 }
 .discribe{
   font-size: 32rpx;
