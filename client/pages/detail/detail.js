@@ -6,6 +6,7 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
+    placeholder:"说点什么",
     pushcomment:'',
     receiver: null,
     itemID: null,
@@ -40,7 +41,8 @@ Page({
     that.setData({
       receiver:event.target.dataset.id,
       isReply:true,
-      inputFocus:true
+      inputFocus:true,
+      placeholder: "回复给 "+event.target.dataset.placeholder
     })
     console.log("即将回复给： "+that.data.receiver)
   },
