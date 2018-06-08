@@ -4,12 +4,12 @@
   align-content: center;
 }
 .title{
-  font-size: 15px;
+  font-size: 40rpx;
   color: #33cc66;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 20px;
+  height: 60rpx;
   margin-top: 10px;
 }
 .head{
@@ -41,23 +41,40 @@
   flex-direction: column;
 }
 .item{
-  height:100px;
+  height:230rpx;
   display: flex;
   flex-direction: row;
+  border-bottom: 2rpx #eeeeee solid;
 }
-.itemIcon{
-  margin-top: 10px;
-  margin-left: 10px;
+.img{
+  margin-left: 15rpx;
+  margin-top: 10rpx;
 }
-.itemIcon image{
-  height: 80px;
-  width: 80px;
+.img image{
+  height: 200rpx;
+  width: 200rpx;
 }
 .productInfo{
   display: flex;
   flex-direction: column;
+  margin:30rpx;
 }
-.productInfo text{
-  font-size: 17px;
-  margin: 10px;
+.productInfo_titleandprice{
+  display: flex;
+  flex-direction: row;
+}
+.prdtitle{
+  font-size: 36rpx;
+  width:400rpx;
+  margin-top: 20rpx;
+}
+.price{
+  font-size: 36rpx;
+  width:200rpx;
+  margin-top: 20rpx;
+}
+.discribe{
+  font-size: 32rpx;
+  color: #aaaaaa;
+  margin-top: 20rpx;
 }
