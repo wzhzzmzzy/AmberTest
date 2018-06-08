@@ -16,13 +16,13 @@
   <view class='section3'>
     <view>{{discription}}</view>
   </view>
+  <view class='newreply' bindtap="sendReply" data-isReply="false" data-id="15">添加新评论</view>
   <view class='section4'>
     <view class='section4_title'>
       <text>留言板</text>
       <image src='../../images/detail/write.png'></image>
     </view>
     <view class='section4_content'>
-      <view class='section4_title' bindtap="sendReply" data-isReply="false" data-id="15">发送新评论</view>
       <!--<view wx:for="{{existedComments}}">
         {{item.}}
       </view>-->

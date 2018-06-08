@@ -1,6 +1,5 @@
 {
   "pages":[
-    
     "pages/home/home",
     
     "pages/catagory/catagory",
@@ -9,8 +8,7 @@
     "pages/publish/publish",
     "pages/message/message",
 
-    "pages/detail/detail",
-    
+  "pages/detail/detail",
 
     "pages/mine/mine",
     "pages/mine/items/index",

@@ -74,7 +74,7 @@ Page({
             items: res.data.data,
             noItem: false
           })
-          // console.log(that.data.items)
+          console.log(that.data.items)
         }
         util.showSuccess("获取成功")
       },

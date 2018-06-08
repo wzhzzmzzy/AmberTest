@@ -20,6 +20,11 @@
   width:80%;
   height: 400rpx;
 }
+.newreply{
+  text-align: right;
+  font-size: 40rpx;
+  color: #aaaaaa;
+}
 .section4{
   display: flex;
   flex-direction: column;

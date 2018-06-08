@@ -23,7 +23,7 @@
         </view>
       </view>
       <view wx:elif="{{noItem===true}}">
-        <text>你没有正在交易中的商品</text>
+        <text>还没有发布的商品哦！</text>
       </view>
       <view wx:else></view>
       <view class='seperate1'></view>
