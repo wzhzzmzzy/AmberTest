@@ -116,7 +116,7 @@ Page({
     that.setData({
       city: temp_city,
       province:temp_province,
-      university: temp_campus
+      campus: temp_campus
     })
 
     if (!that.data.city){
