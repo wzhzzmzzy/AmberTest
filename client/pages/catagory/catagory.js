@@ -24,7 +24,7 @@ Page({
   },
   edevice: function () {
     wx.navigateTo({
-      url: 'items/index?catagory=electronics',
+      url: 'items/index?catagory=electronic',
     })
   },
   vehicle: function () {
