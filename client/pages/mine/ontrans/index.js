@@ -43,12 +43,20 @@ Page({
       success: res => {
         console.log(res.data.data)
         util.showSuccess('载入成功')
-        that.setData({
+        if (res.data.code === 1) {
+          that.setData({
+            noBuyItem: true,
+            noSellItem: true
+          })
+        } else {
+          that.setData({
             buyItems: res.data.data['buy'],
             noBuyItem: res.data.data['buy'] === null,
             sellItems: res.data.data['sell'],
             noSellItem: res.data.data['sell'] === null
-        })
+          })
+        }
+        
         console.log(that.data)
       },
       fail: error => {

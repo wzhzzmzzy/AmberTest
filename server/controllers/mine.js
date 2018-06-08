@@ -87,7 +87,8 @@ async function ontrans(ctx, next) {
             beego.select('Transaction', sell_query)
         ])
     }).then(async rep => {
-        if (!rep[0] && !rep[1] && !rep[0].length && !rep[1].length)  {
+        tk.log(rep)
+        if (!rep[0] && !rep[1])  {
             ctx.state.code = 1
             return
         }
@@ -96,6 +97,7 @@ async function ontrans(ctx, next) {
             'sell': rep[0],
             'buy': rep[1]
         }
+        tk.log(ret)
         if (ret['sell'] !== null && ret['sell'].length) {
             await Promise.all(ret['sell'].map(async trans => {
                 let rep = await Promise.all([
