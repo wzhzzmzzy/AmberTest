@@ -31,6 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
     // if(!app.globalData.auth.){
     //   wx.navigateTo({
     //     url: '/pages/',
@@ -46,20 +47,14 @@ Page({
     //   })
     // }
     //console.error("__________________: ",app.globalData['auth']['scope.userInfo'])
-    if (app.globalData['auth']['scope.userInfo']===false){
-      //util.showModel("haha","你tm没登录")
-      wx.navigateTo({
-        url: '../login/login'
-      })
-    }
-    // console.error("auth: ",app.globalData['auth'])
-    if (app.globalData['auth']['scope.userInfo']) {
-      this.setData({
+    console.error("Home auth: ",app.globalData['auth'])
+    if (app.globalData['auth']['scope.userInfo']===true) {
+      that.setData({
         userInfo: app.globalData.userInfo,
         logged: true
       })
       if (app.globalData.city === null && app.globalData.province === null) {
-        this.getLocation()
+        that.getLocation()
       }
     }else{
       console.error("Not Logined")

@@ -10,10 +10,11 @@
     </block>
   </view>
   <view class='head'>
-    当前省份：{{currentProvince}}    
-    城市：{{currentCity}}    
+    <text class="userinfo-nickname">当前省份：{{currentProvince}}</text>  
+    <text class="userinfo-nickname">城市：{{currentCity}}</text>
+    
   </view>
   <view wx:for="{{university}}" class='university' bindtap='back'>
-    <text bindtap="updateLocation" data-id="{{item.Id}}">{{item.Name}}</text>
+    <text bindtap="updateLocation" data-id="{{item.Id}}" data-campus="{{item.Name}}">{{item.Name}}</text>
   </view>
 </view>
