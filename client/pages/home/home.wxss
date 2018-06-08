@@ -24,22 +24,18 @@
   height: 25px;
   width: 25px;
 }
-.seperate1{
-  height: 1px;
-  background-color: #33cc66;
-  width: 100%;
-}
 .hr{
   display: flex;
   flex-direction: column;
 }
 .item{
-  height:200rpx;
+  height:230rpx;
   display: flex;
   flex-direction: row;
+  border-bottom: 2rpx #eeeeee solid;
 }
 .img{
-  margin-left: 10rpx;
+  margin-left: 15rpx;
   margin-top: 10rpx;
 }
 .img image{
@@ -56,12 +52,15 @@
   flex-direction: row;
 }
 .title{
+  font-size: 36rpx;
   width:400rpx;
 }
 .price{
+  font-size: 36rpx;
   width:200rpx;
 }
-.productInfo text{
-  font-size: 17px;
+.discribe{
+  font-size: 32rpx;
+  color: #aaaaaa;
   margin-top: 20rpx;
 }
