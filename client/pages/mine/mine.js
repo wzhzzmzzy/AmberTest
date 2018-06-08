@@ -4,6 +4,7 @@ var config = require('../../config')
 var util = require('../../utils/util.js')
 
 const app = getApp()
+
 Page({
   data: {
     userInfo: {},

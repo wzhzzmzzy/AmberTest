@@ -47,7 +47,6 @@ Page({
     //   })
     // }
     //console.error("__________________: ",app.globalData['auth']['scope.userInfo'])
-    
     console.error("Home auth: ",app.globalData['auth'])
     if (app.globalData['auth']['scope.userInfo']===true) {
       that.setData({
@@ -75,7 +74,7 @@ Page({
             items: res.data.data,
             noItem: false
           })
-          console.log(that.data.items)
+          // console.log(that.data.items)
         }
         util.showSuccess("获取成功")
       },
@@ -108,12 +107,12 @@ Page({
       },
       success: function (res) {
         // success 
-        console.log(res);
+        // console.log(res);
         var city = res.data.result.addressComponent.city;
         var province = res.data.result.addressComponent.province;
         getApp().globalData.city = city;
         getApp().globalData.province = province;
-        console.log(getApp().globalData.city);
+        // console.log(getApp().globalData.city);
         page.openAlert()
       },
       fail: function () {
