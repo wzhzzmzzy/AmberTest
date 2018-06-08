@@ -68,7 +68,7 @@ var getSthById = async function (sth, id) {
 }
 
 var getItem = async function (query) {
-    query['fields'] = query['fields'] || "Id,Detail,Title,RefreshTime"
+    query['fields'] = query['fields'] || "Id,Detail,Title,RefreshTime,Image,Price"
     query['sortby'] = query['sortby'] || "RefreshTime"
     query['order'] = query['order'] || 'desc'
     return selectBeego('Item', query).then(rep => {
