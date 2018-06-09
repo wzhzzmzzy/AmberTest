@@ -20,11 +20,11 @@
   margin-left: 10%;
   width:80%;
   height: 400rpx;
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 .newreply{
   text-align: right;
-  font-size: 30rpx;
+  font-size: 35rpx;
   color: #aaaaaa;
 }
 .section4{
