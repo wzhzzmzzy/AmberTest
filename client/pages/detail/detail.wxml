@@ -16,7 +16,7 @@
   <view class='section3'>
     <view>{{discription}}</view>
   </view>
-  <view class='newreply' bindtap="sendReply" data-isReply="false" data-id="15" data-placeholder='卖家'>添加新评论</view>
+  <button class='newreply' bindtap="sendReply" data-isReply="false" data-id="15" data-placeholder='卖家'>添加新评论</button>
   <view class='section4'>
     <view class='section4_title'>
       <text>留言板</text>
@@ -38,7 +38,7 @@
             <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}</view>
             <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
           </view>
-          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</view>
+          <button style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</button>
         </view>
         <view class="mess-cell" wx:if="{{item.Receiver.Id!=15}}">
           <view style="position: relative;margin-right: 10px;">
@@ -48,15 +48,15 @@
             <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了   {{item.Receiver.Nickname}}</view>
             <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
           </view>
-          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</view>
+          <button style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</button>
         </view>
       </view>
     </view>
     <view class='section4_bottom'></view>
   </view>
   <view class='section5'>
-    <input type='text' name='title' bindinput="collectComment" focus="{{inputFocus}}" value='{{pushcomment}}' placeholder='{{placeholder}}'></input>
-    <view bindtap='sendComment' data-isReply="false" data-id="{{receiver}}">发送</view>
+    <input  fixed='true' type='text' name='title' bindinput="collectComment" focus="{{inputFocus}}" value='{{pushcomment}}' placeholder='{{placeholder}}'></input>
+    <button  bindtap='sendComment' data-isReply="false" data-id="{{receiver}}">发送</button>
   </view>
 
 </view>
