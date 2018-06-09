@@ -7,7 +7,6 @@
     "pages/message/message",
     "pages/location/location",
     "pages/detail/detail",
-    "pages/publish/publish",
 
     "pages/mine/mine",
     "pages/mine/items/index",
@@ -21,7 +20,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#33cc66",
-    "navigationBarTitleText": "校园二手",
+    "navigationBarTitleText": "易易校园二手",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
