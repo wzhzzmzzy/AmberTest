@@ -11,7 +11,7 @@
   <view wx:if="{{noItem===false}}" class='hr'>
     <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
       <view class='img'>
-        <image src='../../images/home/search_1.png'></image>
+        <image src='https://www.baidu.com/img/540%20258_c622d80176946df7f7b8d1997edf57d4.gif'></image>
       </view>
       <view class='productInfo' >
         <view class='productInfo_titleandprice'>
