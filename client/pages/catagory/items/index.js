@@ -68,9 +68,22 @@ Page({
           })
         } else {
           that.setData({
-            items: res.data.data,
             noItem: false
           })
+          let temp = res.data.data
+          for (let i in temp) {
+            if (temp[i].Image.slice(1, -1) === "null") {
+              temp[i].Image = "../../../images/home/search_1.png"
+            } else {
+              temp[i].Image = config.service.imageUrl + temp[i].Image.slice(2, -2)
+              console.log("DATA", temp[i].Image)
+            }
+          }
+          that.setData({
+            items: temp,
+            noItem: false
+          })
+          console.log(that.data.items)
         }
       },
       fail: err => {

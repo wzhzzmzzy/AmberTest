@@ -13,5 +13,32 @@
 	"appid": "wx4d4b8d11fe33b28a",
 	"projectname": "AmberTest",
 	"libVersion": "2.0.9",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/home/home",
+					"scene": "1001"
+				}
+			]
+		}
+	}
 }
