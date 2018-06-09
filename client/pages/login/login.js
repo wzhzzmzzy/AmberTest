@@ -64,6 +64,7 @@ Page({
                     url: '/pages/home/home',
                     success: function (res) {
                       util.showSuccess("登录成功")
+                      getApp().globalData.firstLogin = true
                     }
                   })
                 },

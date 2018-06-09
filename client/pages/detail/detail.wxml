@@ -4,25 +4,25 @@
     <swiper autoplay='true' interval='3000' duration='1000' indicator-dots='true'>
       <block wx:for='{{imgUrls}}'>
         <swiper-item>
-          <image src='{{item}}'></image>
+          <image src='{{item}}' bindtap='viewimage'></image>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class='section2'>
-    <view>{{title}}</view>
+    <view>商品名称：{{title}}</view>
     <view>￥{{price}}</view>
   </view>
   <view class='section3'>
-    <view>{{discription}}</view>
+    <view>商品描述：{{discription}}</view>
   </view>
+  <text class='newreply' bindtap="sendReply" data-isReply="false" data-id="{{sellerID}}" data-placeholder='卖家'>添加新评论</text>
   <view class='section4'>
     <view class='section4_title'>
       <text>留言板</text>
       <image src='../../images/detail/write.png'></image>
     </view>
     <view class='section4_content'>
-      <view class='section4_title' bindtap="sendReply" data-isReply="false" data-id="15">发送新评论</view>
       <!--<view wx:for="{{existedComments}}">
         {{item.}}
       </view>-->
@@ -36,9 +36,9 @@
           </view>
           <view class="right">
             <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}</view>
-            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+            <view style="font-size: 34rpx;color: #888888;">{{item.Context}}</view>
           </view>
-          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}">回复</view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</view>
         </view>
         <view class="mess-cell" wx:if="{{item.Receiver.Id!=15}}">
           <view style="position: relative;margin-right: 10px;">
@@ -46,21 +46,17 @@
           </view>
           <view class="right">
             <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了   {{item.Receiver.Nickname}}</view>
-            <view style="font-size: 36rpx;color: #888888;">{{item.Context}}</view>
+            <view style="font-size: 34rpx;color: #888888;">{{item.Context}}</view>
           </view>
-          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}">回复</view>
+          <view style='font-size:35rpx; color: #888888' bindtap="sendReply" data-isReply="true" data-id="{{item.CommenterId.Id}}" data-placeholder='{{item.CommenterId.Nickname}}'>回复</view>
         </view>
-
       </view>
-
-
     </view>
-
     <view class='section4_bottom'></view>
   </view>
   <view class='section5'>
-    <input type='text' placeholder='我要留言……' name='title' bindinput="collectComment" focus="{{inputFocus}}"></input>
-    <view bindtap='sendComment' data-isReply="false" data-id="{{receiver}}">发送</view>
+    <input  placeholder="{{placeholder}}" fixed='true' type='text' name='title' bindinput="collectComment" focus="{{inputFocus}}" value='{{pushcomment}}' ></input>
+    <view  bindtap='sendComment' data-isReply="false" data-id="{{receiver}}">发送</view>
   </view>
 
 </view>

@@ -7,7 +7,7 @@
   height: 90px;
   display: flex;
   flex-direction: row;
-  background-color: #33cc66;
+  background-color: #94ee94;
 }
 .head button{
   margin-top: 15px;

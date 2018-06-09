@@ -1,2 +1,2 @@
 <!--pages/mine/setup/setup.wxml-->
-<button plain='true' bindtap="toLocation"> 更换所在城市 </button>
+<button plain='true' bindtap="toLocation"> 更换学校 </button>

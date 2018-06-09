@@ -23,10 +23,8 @@
     <view class='addphoto' bindtap='chooseImg'>
       <text>+</text>
     </view>
-    <view wx:if="{{images.length !== 0}}">
-      <view wx:for="{{images}}" >
-        <image src="{{item}}" mode="aspectFill" class="photo"/>
-      </view>
+    <view wx:if="{{images.length !== 0}}" wx:for="{{images}}" class="pht">
+      <image src="{{item}}" mode="aspectFill" />
     </view>
   </view>
   <button class='btn' bindtap="doPublish">发布</button>
