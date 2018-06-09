@@ -11,7 +11,7 @@
   <view wx:if="{{noItem===false}}" class='hr'>
     <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
       <view class='img'>
-        <image src='../../images/home/search_1.png'></image>
+        <image src='{{item.Image}}'></image>
       </view>
       <view class='productInfo' >
         <view class='productInfo_titleandprice'>
