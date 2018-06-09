@@ -8,7 +8,7 @@
     <block wx:for="{{mycomments}}" >
       <view class='single_message' bindtap="toItem" data-index="{{index}}">
       <image src="{{item.CommenterId.Avatar}}" style="width: 50px; height: 50px; display: block" />
-      <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了 您</view>
+      <view style="font-size: 30rpx;">{{item.CommenterId.Nickname}}   回复了您</view>
       </view>
     </block>
   </block>
