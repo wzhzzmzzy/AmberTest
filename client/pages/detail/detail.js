@@ -6,8 +6,7 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
-    sellerID:null,
-    pushcomment:'',
+    receiver: null,
     itemID: null,
     imgUrls: [],
     existedComment: [],
@@ -20,14 +19,6 @@ Page({
     receiver:"15"//default null replyer
   },
 
-
-  viewimage: function (e) {
-    let that = this
-    wx.previewImage({
-      urls: that.data.imgUrls,
-    })
-  },
-
   /**
    * 输入监视函数
    */
@@ -36,7 +27,6 @@ Page({
     this.setData({
       pushcomment: e.detail.value
     })
-    console.log(this.data.pushcomment)
   },
   //complete pushComment
 
@@ -48,8 +38,7 @@ Page({
     that.setData({
       receiver:event.target.dataset.id,
       isReply:true,
-      inputFocus:true,
-      placeholder: "回复给 "+event.target.dataset.placeholder
+      inputFocus:true
     })
     console.log("即将回复给： "+that.data.receiver)
   },
@@ -72,6 +61,7 @@ Page({
       "to": to_id
     }
     console.log(commentBody)
+    //TODO:POST the body
     qcloud.request({
       url: config.service.addComment,
       method: "POST",
@@ -82,26 +72,6 @@ Page({
           util.showSuccess("评论成功")
           console.log("好像成功了", res.statusCode, res.header, res.data)
           that.onPullDownRefresh()
-          that.setData({
-            pushcomment:''
-          })
-          qcloud.request({
-            url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
-            method: "GET",
-            success: function (res) {
-              console.error("New comment:", res)
-              let temp_comment = that.data.existedComment
-              let comments = res.data.data
-              //console.log(comments)
-              for (let i in comments) {
-                console.log(comments[i])
-                temp_comment.push(comments[i])
-              }
-              that.setData({
-                existedComment: temp_comment
-              })
-            }
-          })
         }else{
           console.warn("评论返回值不正确", res.data)
         }
@@ -128,12 +98,11 @@ Page({
       success: function (res) {
         util.showSuccess('载入成功')
         let image = JSON.parse(res.data.data.Image)
-        console.log("卖家",res.data.data)
+        console.log(image, typeof(image))
         for (let i = 0; i < image.length; ++i) {
           image[i] = config.service.imageUrl + image[i]
         }
         that.setData({
-          sellerID: res.data.data.Publisher.Id,
           itemID: options.id,
           imgUrls: image,
           price: res.data.data.Price,
@@ -176,27 +145,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(getApp().globalData.firstLogin){
-      wx.showModal({
-        showCancel: false,
-        title: '使用小贴士',
-        content: '只支持本校线下交易方式，如果有心仪的宝贝，可点击‘添加新评论’在留言板中给卖家留言',
-        success: function (res) {
-          if (res.confirm) {
-            getApp().globalData.firstLogin=false
-          } else {
-            console.log("这不可能")
-          }
-        }
-      })
-    }
+
   },
 
   /**
@@ -228,27 +184,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let that=this
     /**
-     * 下拉继续加载评论
+     * TODO:下拉继续加载评论
      */
-    qcloud.request({
-      url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
-      method:"GET",
-      success:function(res){
-        console.error("New comment:",res)
-        let temp_comment = that.data.existedComment
-        let comments = res.data.data
-        //console.log(comments)
-        for (let i in comments) {
-          console.log(comments[i])
-          temp_comment.push(comments[i])
-        }
-        that.setData({
-          existedComment: temp_comment
-        })
-      }
-    })
   },
 
   /**

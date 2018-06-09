@@ -6,7 +6,6 @@ var util = require('utils/util.js')
 //app.js
 App({
   globalData: {
-    firstLogin:false,
     userInfo: null,
     auth: {
       'scope.userInfo':false
@@ -49,20 +48,13 @@ App({
           })
         }
         else{
-          console.log("Redirecting to login")
-          if (wx.reLaunch) {
-            wx.reLaunch({
-              url: '/pages/login/login',
-            })
-          } else {
-            // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
-            wx.showModal({
-              title: '提示',
-              content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
-            })
-          }
-          
-          console.log("should be redirected")
+          //util.showModel("haha","你tm没登录")
+          wx.authorize({
+            scope: '',
+          })
+          wx.navigateTo({
+            url: '../login/login'
+          })
         }
       }
     })

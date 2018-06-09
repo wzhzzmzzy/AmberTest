@@ -12,12 +12,15 @@
         <text>{{userInfo.nickName}}</text>
       </view>
     </block>
+    <view class='detail' bindtap='information'>
+        <text>></text>
+    </view>
   </view>
 
   <view class='hr'>
     <view class='item' bindtap='sold'>
       <view class='itemIcon'>
-        <image src='../../images/mine/sold.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>我卖出的</view>
       <view class='detail1'>
@@ -27,7 +30,7 @@
     <view class='seperate1'></view>
     <view class='item' bindtap='bought'>
       <view class='itemIcon'>
-        <image src='../../images/mine/bought.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>我买到的</view>
       <view class='detail1'>
@@ -37,7 +40,7 @@
     <view class='seperate1'></view>
     <view class='item' bindtap='ontrans'>
       <view class='itemIcon'>
-        <image src='../../images/mine/ontrans.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>正在交易</view>
       <view class='detail1'>
@@ -47,7 +50,7 @@
     <view class='seperate1'></view>
     <view class='item' bindtap='published'>
       <view class='itemIcon'>
-        <image src='../../images/mine/published.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>我发布的</view>
       <view class='detail1'>
@@ -59,7 +62,7 @@
     
     <view class='item' bindtap='setup'>
       <view class='itemIcon'>
-        <image src='../../images/mine/setup.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>设置</view>
       <view class='detail1'>
@@ -70,7 +73,7 @@
 
     <view class='item' bindtap='aboutus'>
       <view class='itemIcon'>
-        <image src='../../images/mine/aboutus.png'></image>
+        <image src='../../images/mine/arrow.png'></image>
       </view>
       <view class='title'>关于我们</view>
       <view class='detail1'>

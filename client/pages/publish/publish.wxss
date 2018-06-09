@@ -53,7 +53,7 @@
 }
 .ctgr{
   margin-top: 7px;
-  color:#74ee74;
+  color:#33cc66;
   margin-left: 28%;
   width:150px;
 }
@@ -63,41 +63,37 @@
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  margin-top: 30rpx;
-  flex-wrap: wrap;
+  margin-top: 5px;
 }
 .addphoto{
-  width:174rpx;
-  height:174rpx;
-  border:2rpx dashed #74ee74;
+  height:80px;
+  width:80px;
+  border:2rpx dashed #33cc66;
   border-radius: 20%;
   font-size: 30px;
   color: #33cc66;
   display: table;
   background-color: #ffffff;
-  margin-top: 30rpx;
-  margin-left: 50rpx;
+  margin-top: 5%;
+  margin-left: 10%;
 }
 .addphoto text{
   display: table-cell;
   text-align: center; 
   vertical-align:middle; 
 }
-
-.pht{
-  margin-top:30rpx;
-  margin-left: 50rpx;
-  }
-.pht image{
+.photo{
   width:180rpx;
   height:180rpx;
-  border-radius: 10%;
+  margin-top: 5%;
+  margin-left: 5%;
+  border-radius: 20%;
 }
 .btn{
   position: fixed;
   bottom: 0;
   width: 95%;
-  background-color: #84ee84;
+  background-color: #33cc66;
   color: #ffffff;
   font-size: 18px;
   margin-top: 5px;

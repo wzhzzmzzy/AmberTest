@@ -21,8 +21,9 @@
   height: 128rpx;
 }
 .userinfo-nickname {
-  margin: 20rpx;
+  margin-top: 20rpx;
   font-size: 38rpx;
+  color: black;
 }
 .page-body {
   width: 100%;
@@ -50,10 +51,74 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff;
+  margin-bottom: 50rpx;
   width: 100%;
-  padding: 50rpx 0 0 0;
+  padding: 50rpx 0 150rpx 0;
 }
+.page-body-title {
+  margin-bottom: 100rpx;
+  font-size: 32rpx;
+}
+.page-body-text {
+  font-size: 30rpx;
+  line-height: 26px;
+  color: #ccc;
+}
+.page-body-text-small {
+  font-size: 24rpx;
+  color: #000;
+  margin-bottom: 100rpx;
+}
+.page-body-form {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #eee;
+}
+.page-body-form-item {
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+}
+.page-body-form-key {
+  width: 180rpx;
+}
+.page-body-form-value {
+  flex-grow: 1;
+}
+
+.page-body-form-picker {
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  align-items: center;
+  font-size: 36rpx;
+  margin-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.page-body-form-picker-value {
+  color: #ccc;
+}
+
 .page-body-buttons {
-  width: 60%;
-  margin-left: 20%;
+  width: 100%;
+}
+.page-body-button {
+  margin: 25rpx;
+}
+.page-body-button image {
+  width: 150rpx;
+  height: 150rpx;
+}
+.page-footer {
+  text-align: center;
+  color: #1aad19;
+  font-size: 24rpx;
+  margin: 20rpx 0;
 }

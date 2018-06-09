@@ -9,7 +9,6 @@
   height:100%;
 }
 .section2{
-  font-size: 36rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -20,12 +19,6 @@
   margin-left: 10%;
   width:80%;
   height: 400rpx;
-  font-size: 32rpx;
-}
-.newreply{
-  text-align: right;
-  font-size: 35rpx;
-  color: #aaaaaa;
 }
 .section4{
   display: flex;
@@ -36,7 +29,7 @@
   flex-direction: row;
   justify-content: center;
   color: #33cc66;
-  font-size: 45rpx;
+  font-size: 50rpx;
   margin-top: 10rpx;
 }
 .section4_title image{
@@ -51,7 +44,7 @@
   height: 100rpx;
 }
 .section5{
-  background-color: #eeeeee;
+  background-color: #ffffff;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -64,15 +57,13 @@
 .section5 input{
   margin-top: 20rpx;
   width:70%;
-  border: 1rpx solid #aaaaaa;
-  height: 60rpx;
-  background-color: #ffffff;
-  border-radius: 7%;
+  border-bottom: 1rpx solid #aaaaaa;
+  height: 50rpx;
 }
 .section5 view{
   margin-top: 20rpx;
   margin-left: 5%;
-  font-size: 36rpx;
+  font-size: 40rpx;
   color:#33cc66;
 }
 .mess-cell{

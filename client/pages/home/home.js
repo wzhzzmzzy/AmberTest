@@ -12,20 +12,13 @@ Page({
    */
   data: {
     imgUrls: [
-      config.service.imageUrl + 'icons/1.png',
-      config.service.imageUrl + 'icons/2.png',
-      config.service.imageUrl + 'icons/3.png'
+      config.service.imageUrl + '1.jpg',
+      config.service.imageUrl + '2.jpg',
+      config.service.imageUrl + '3.jpg'
     ],
     items: [],
     noItem: null,
     userInfo:null
-  },
-
-  viewimage:function(e){
-    let that=this
-    wx.previewImage({
-      urls: that.data.imgUrls,
-    })
   },
 
   toItem: function(e){
@@ -63,22 +56,10 @@ Page({
           })
         } else {
           that.setData({
+            items: res.data.data,
             noItem: false
           })
-          let temp = res.data.data
-          for(let i in temp){
-            if(temp[i].Image.slice(1,-1)==="null"){
-              temp[i].Image ="../../images/home/search_1.png"
-            }else{
-              temp[i].Image = config.service.imageUrl+temp[i].Image.slice(2, -2)
-              console.log("DATA", temp[i].Image)
-            }
-          }
-          that.setData({
-            items: temp,
-            noItem: false
-          })
-          console.log(that.data.items)
+          // console.log(that.data.items)
         }
         util.showSuccess("获取成功")
       },
@@ -146,7 +127,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
   },
 
   /**

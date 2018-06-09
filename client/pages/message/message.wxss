@@ -6,23 +6,28 @@
 .single_message{
   display: flex;
   flex-direction: row;
-  height: 140rpx;
-  border-bottom: 1rpx solid #eeeeee;
-}
-.single_message view{ 
-  margin-top: 50rpx;
-  margin-left: 30rpx; 
-  color: #aaaaaa;
-  font-size: 30rpx;
-}
-.single_message image{
-  margin-top: 20rpx;
-  margin-left:50rpx; 
-  width: 100rpx;
   height: 100rpx;
-  border-radius: 50%;
+  border-bottom: 1rpx solid #eeeeee;
+  justify-content: space-between;
 }
-.name{
-  color: #44ee44;
-  font-size: 36rpx;
+.single_message text{
+  margin-top: 20rpx;
+  margin-left:20rpx; 
+  font-size: 35rpx;
+}
+.unread{
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  height: 40rpx;
+  width: rpx;
+  display:inline-block;
+  padding:.15em .4em;
+  min-width:8px;
+  border-radius:18px;
+  background-color:#e64340;
+  color:#fff;
+  line-height:1.2;
+  text-align:center;
+  font-size:12px;
+  vertical-align:middle;
 }
