@@ -6,7 +6,6 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
-    placeholder:"说点什么",
     pushcomment:'',
     receiver: null,
     itemID: null,
