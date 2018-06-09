@@ -29,7 +29,7 @@
   flex-direction: column;
 }
 .item{
-  height:230rpx;
+  height:210rpx;
   display: flex;
   flex-direction: row;
   border-bottom: 2rpx #eeeeee solid;
@@ -39,8 +39,8 @@
   margin-top: 10rpx;
 }
 .img image{
-  height: 200rpx;
-  width: 200rpx;
+  height: 180rpx;
+  width: 180rpx;
 }
 .productInfo{
   display: flex;
@@ -52,17 +52,17 @@
   flex-direction: row;
 }
 .title{
-  font-size: 36rpx;
+  font-size: 33rpx;
   width:400rpx;
   margin-top: 20rpx;
 }
 .price{
-  font-size: 36rpx;
+  font-size: 33rpx;
   width:200rpx;
   margin-top: 20rpx;
 }
 .discribe{
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #aaaaaa;
   margin-top: 20rpx;
 }
