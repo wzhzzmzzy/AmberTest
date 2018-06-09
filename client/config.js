@@ -3,7 +3,8 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://megiw63o.qcloud.la';
+var dev_host = 'https://megiw63o.qcloud.la';
+var host = 'https://371080126.wzhzzmzzy.xyz';
 var image = 'https://ssl.liontao.xin';
 
 var config = {
