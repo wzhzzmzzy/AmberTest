@@ -5,9 +5,12 @@ const beego = require('../tools/beego')
 var getComment = async (ctx, next) => {
     // /weapp/comment/:id
     let itemId = ctx.params.id
+    let offset = ctx.query['offset']
+    offset = offset ? parseInt(offset) : 0
     let query = {
         'query': 'ItemId:'+itemId,
-        'fields': 'Context,PublishTime,CommenterId,Receiver'
+        'fields': 'Context,PublishTime,CommenterId,Receiver',
+        'offset': offset
     }
     let rep = {}
     await beego.select('Comment', query).then(async res => {
@@ -97,6 +100,10 @@ var messages = async (ctx, next) => {
         }
         ctx.state.data = res
     })
+}
+
+var nextComment = async (ctx, next) => {
+
 }
 
 module.exports = {
