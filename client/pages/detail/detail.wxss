@@ -9,7 +9,7 @@
   height:100%;
 }
 .section2{
-  font-size: 40rpx;
+  font-size: 36rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -20,7 +20,7 @@
   margin-left: 10%;
   width:80%;
   height: 400rpx;
-  font-size: 34rpx;
+  font-size: 32rpx;
 }
 .newreply{
   text-align: right;
@@ -72,7 +72,7 @@
 .section5 view{
   margin-top: 20rpx;
   margin-left: 5%;
-  font-size: 40rpx;
+  font-size: 36rpx;
   color:#33cc66;
 }
 .mess-cell{
