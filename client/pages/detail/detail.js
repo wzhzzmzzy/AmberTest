@@ -78,6 +78,23 @@ Page({
           that.setData({
             pushcomment:''
           })
+          qcloud.request({
+            url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
+            method: "GET",
+            success: function (res) {
+              console.error("New comment:", res)
+              let temp_comment = that.data.existedComment
+              let comments = res.data.data
+              //console.log(comments)
+              for (let i in comments) {
+                console.log(comments[i])
+                temp_comment.push(comments[i])
+              }
+              that.setData({
+                existedComment: temp_comment
+              })
+            }
+          })
         }else{
           console.warn("评论返回值不正确", res.data)
         }
@@ -190,9 +207,27 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    let that=this
     /**
-     * TODO:下拉继续加载评论
+     * 下拉继续加载评论
      */
+    qcloud.request({
+      url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
+      method:"GET",
+      success:function(res){
+        console.error("New comment:",res)
+        let temp_comment = that.data.existedComment
+        let comments = res.data.data
+        //console.log(comments)
+        for (let i in comments) {
+          console.log(comments[i])
+          temp_comment.push(comments[i])
+        }
+        that.setData({
+          existedComment: temp_comment
+        })
+      }
+    })
   },
 
   /**
