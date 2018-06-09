@@ -183,7 +183,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(getApp().globalData.firstLogin){
+      wx.showModal({
+        showCancel: false,
+        title: '使用小贴士',
+        content: '只支持本校线下交易方式，如果有心仪的宝贝，可点击‘添加新评论’在留言板中给卖家留言',
+        success: function (res) {
+          if (res.confirm) {
+            getApp().globalData.firstLogin=false
+          } else {
+            console.log("这不可能")
+          }
+        }
+      })
+    }
   },
 
   /**
