@@ -12,9 +12,9 @@ Page({
    */
   data: {
     imgUrls: [
-      config.service.imageUrl + '1.jpg',
-      config.service.imageUrl + '2.jpg',
-      config.service.imageUrl + '3.jpg'
+      config.service.imageUrl + 'icons/1.png',
+      config.service.imageUrl + 'icons/2.png',
+      config.service.imageUrl + 'icons/3.png'
     ],
     items: [],
     noItem: null,
@@ -63,7 +63,19 @@ Page({
           })
         } else {
           that.setData({
-            items: res.data.data,
+            noItem: false
+          })
+          let temp = res.data.data
+          for(let i in temp){
+            if(temp[i].Image.slice(1,-1)==="null"){
+              temp[i].Image ="../../images/home/search_1.png"
+            }else{
+              temp[i].Image = config.service.imageUrl+temp[i].Image.slice(2, -2)
+              console.log("DATA", temp[i].Image)
+            }
+          }
+          that.setData({
+            items: temp,
             noItem: false
           })
           console.log(that.data.items)
