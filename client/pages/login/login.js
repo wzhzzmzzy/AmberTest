@@ -13,9 +13,9 @@ Page({
     hasUserInfo:false,
     userInfo: null,
     logged: false,
-    city:app.globalData.city,
-    province:app.globalData.province,
-    university: app.globalData.university
+    city: null,
+    province: null,
+    campus: null
   },
 
 
@@ -83,6 +83,7 @@ Page({
             }
           }
         })
+        //that.onLoad({})
       },
       fail(error) {
         util.showModel('登录失败', error)
@@ -95,13 +96,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
-    if (app.globalData.city === null && app.globalData.province === null){
-      that.setData({
-        city:"未指定",
-        province:"未指定"
-      })
-    }
+    let that=this
+    console.error(app.globalData.city)
+    console.error(app.globalData.campus)
+    console.error(app.globalData.province)
+    
     if (app.globalData['auth']['scope.userInfo']){
       console.log("你已经登录了")
       that.setData({
@@ -110,6 +109,32 @@ Page({
         logged:true
       })
     }
+
+    let temp_city = app.globalData.city
+    let temp_province = app.globalData.province
+    let temp_campus = app.globalData.campus
+    that.setData({
+      city: temp_city,
+      province:temp_province,
+      campus: temp_campus
+    })
+
+    if (!that.data.city){
+      that.setData({
+        city: "当前未指定"
+      })
+    }
+    if (!that.data.province) {
+      that.setData({
+        province: "当前未指定"
+      })
+    }
+    if (!that.data.campus) {
+      that.setData({
+        campus: "当前未指定"
+      })
+    }
+
     console.error(this.data.hasUserInfo)
     console.error(this.data.userInfo)
   },
@@ -118,7 +143,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

@@ -6,6 +6,8 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
+    placeholder:"说点什么",
+    pushcomment:'',
     receiver: null,
     itemID: null,
     imgUrls: [],
@@ -27,6 +29,7 @@ Page({
     this.setData({
       pushcomment: e.detail.value
     })
+    console.log(this.data.pushcomment)
   },
   //complete pushComment
 
@@ -38,7 +41,8 @@ Page({
     that.setData({
       receiver:event.target.dataset.id,
       isReply:true,
-      inputFocus:true
+      inputFocus:true,
+      placeholder: "回复给 "+event.target.dataset.placeholder
     })
     console.log("即将回复给： "+that.data.receiver)
   },
@@ -61,7 +65,6 @@ Page({
       "to": to_id
     }
     console.log(commentBody)
-    //TODO:POST the body
     qcloud.request({
       url: config.service.addComment,
       method: "POST",
@@ -72,6 +75,26 @@ Page({
           util.showSuccess("评论成功")
           console.log("好像成功了", res.statusCode, res.header, res.data)
           that.onPullDownRefresh()
+          that.setData({
+            pushcomment:''
+          })
+          qcloud.request({
+            url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
+            method: "GET",
+            success: function (res) {
+              console.error("New comment:", res)
+              let temp_comment = that.data.existedComment
+              let comments = res.data.data
+              //console.log(comments)
+              for (let i in comments) {
+                console.log(comments[i])
+                temp_comment.push(comments[i])
+              }
+              that.setData({
+                existedComment: temp_comment
+              })
+            }
+          })
         }else{
           console.warn("评论返回值不正确", res.data)
         }
@@ -184,9 +207,27 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    let that=this
     /**
-     * TODO:下拉继续加载评论
+     * 下拉继续加载评论
      */
+    qcloud.request({
+      url: config.service.allComment + '/' + that.data.itemID + '?offset=' + that.data.existedComment.length,
+      method:"GET",
+      success:function(res){
+        console.error("New comment:",res)
+        let temp_comment = that.data.existedComment
+        let comments = res.data.data
+        //console.log(comments)
+        for (let i in comments) {
+          console.log(comments[i])
+          temp_comment.push(comments[i])
+        }
+        that.setData({
+          existedComment: temp_comment
+        })
+      }
+    })
   },
 
   /**

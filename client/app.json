@@ -15,6 +15,7 @@
     "pages/mine/info/info",
     "pages/mine/ontrans/index",
     "pages/login/login"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

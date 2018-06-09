@@ -14,7 +14,7 @@
     <text class="userinfo-nickname">城市：{{currentCity}}</text>
     
   </view>
-  <view wx:for="{{university}}" class='university' bindtap='back'>
-    <text bindtap="updateLocation" data-id="{{item.Id}}" data-campus="{{item.Name}}">{{item.Name}}</text>
+  <view wx:for="{{university}}" class='university'>
+    <button bindtap="updateLocation" data-id="{{item.Id}}" data-campus="{{item.Name}}">{{item.Name}}</button>
   </view>
 </view>
