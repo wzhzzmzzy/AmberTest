@@ -1,6 +1,6 @@
 <view class='content'>
   <view class='section'>
-    <swiper autoplay='true' interval='3000' duration='1000' indicator-dots='true'>
+    <swiper autoplay='true' interval='6000' duration='2000' indicator-dots='true'>
        <block wx:for='{{imgUrls}}'>
         <swiper-item>
           <image src='{{item}}' class='slide-image' bindtap='viewimage'></image>
