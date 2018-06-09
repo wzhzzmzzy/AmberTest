@@ -4,12 +4,13 @@
   align-content: center;
 }
 .title{
-  font-size: 40rpx;
+  font-size: 34rpx;
   color: #33cc66;
+  border-bottom: 1rpx #33cc66 solid;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 60rpx;
+  height: 53rpx;
   margin-top: 10px;
 }
 .head{
@@ -32,16 +33,12 @@
   height: 25px;
   width: 25px;
 }
-.seperate1{
-  height: 1px;
-  background-color: #33cc66;
-}
 .hr{
   display: flex;
   flex-direction: column;
 }
 .item{
-  height:230rpx;
+  height:210rpx;
   display: flex;
   flex-direction: row;
   border-bottom: 2rpx #eeeeee solid;
@@ -64,17 +61,17 @@
   flex-direction: row;
 }
 .prdtitle{
-  font-size: 36rpx;
+  font-size: 33rpx;
   width:400rpx;
   margin-top: 20rpx;
 }
 .price{
-  font-size: 36rpx;
+  font-size: 33rpx;
   width:200rpx;
   margin-top: 20rpx;
 }
 .discribe{
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #aaaaaa;
   margin-top: 20rpx;
 }

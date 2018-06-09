@@ -11,7 +11,7 @@
     </view>
     <image src='../../../images/home/search_1.png' bindtap='search'></image>
   </view>
-  <view class='seperate1'></view>
+  
   <view wx:if="{{noItem===false}}" class='hr'>
     <view wx:for="{{items}}" data-index="{{index}}" bindtap='toItem' class='item'>
       <view class='img'>

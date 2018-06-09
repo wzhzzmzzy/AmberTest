@@ -63,37 +63,35 @@
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  margin-top: 5px;
+  margin-top: 30rpx;
+  flex-wrap: wrap;
 }
 .addphoto{
-  height:80px;
-  width:80px;
+  width:174rpx;
+  height:174rpx;
   border:2rpx dashed #33cc66;
   border-radius: 20%;
   font-size: 30px;
   color: #33cc66;
   display: table;
   background-color: #ffffff;
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 30rpx;
+  margin-left: 50rpx;
 }
 .addphoto text{
   display: table-cell;
   text-align: center; 
   vertical-align:middle; 
 }
-.phts{
-  display: flex;
-  flex-direction: row;
-}
+
 .pht{
-  margin-top: 5%;
-  margin-left: 7%;
+  margin-top:30rpx;
+  margin-left: 50rpx;
   }
-.photo{
+.pht image{
   width:180rpx;
   height:180rpx;
-  border-radius: 20%;
+  border-radius: 10%;
 }
 .btn{
   position: fixed;
