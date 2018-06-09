@@ -6,8 +6,8 @@ var util = require('../../utils/util.js')
 
 Page({
   data: {
+    sellerID:null,
     pushcomment:'',
-    receiver: null,
     itemID: null,
     imgUrls: [],
     existedComment: [],
@@ -128,11 +128,12 @@ Page({
       success: function (res) {
         util.showSuccess('载入成功')
         let image = JSON.parse(res.data.data.Image)
-        console.log(image, typeof(image))
+        console.log("卖家",res.data.data)
         for (let i = 0; i < image.length; ++i) {
           image[i] = config.service.imageUrl + image[i]
         }
         that.setData({
+          sellerID: res.data.data.Publisher.Id,
           itemID: options.id,
           imgUrls: image,
           price: res.data.data.Price,
