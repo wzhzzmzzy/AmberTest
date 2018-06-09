@@ -21,6 +21,14 @@ Page({
     receiver:"15"//default null replyer
   },
 
+
+  viewimage: function (e) {
+    let that = this
+    wx.previewImage({
+      urls: that.data.imgUrls,
+    })
+  },
+
   /**
    * 输入监视函数
    */

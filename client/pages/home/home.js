@@ -21,6 +21,13 @@ Page({
     userInfo:null
   },
 
+  viewimage:function(e){
+    let that=this
+    wx.previewImage({
+      urls: that.data.imgUrls,
+    })
+  },
+
   toItem: function(e){
     let index = e.currentTarget.dataset.index
     wx.navigateTo({

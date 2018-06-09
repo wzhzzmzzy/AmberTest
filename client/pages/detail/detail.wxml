@@ -4,7 +4,7 @@
     <swiper autoplay='true' interval='3000' duration='1000' indicator-dots='true'>
       <block wx:for='{{imgUrls}}'>
         <swiper-item>
-          <image src='{{item}}'></image>
+          <image src='{{item}}' bindtap='viewimage'></image>
         </swiper-item>
       </block>
     </swiper>
