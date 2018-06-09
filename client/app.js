@@ -49,11 +49,10 @@ App({
           })
         }
         else{
-          //util.showModel("haha","你tm没登录")
           console.log("Redirecting to login")
           if (wx.reLaunch) {
             wx.reLaunch({
-              url: 'pages/login/login',
+              url: '/pages/login/login',
             })
           } else {
             // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
