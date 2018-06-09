@@ -4,30 +4,28 @@
     "pages/catagory/catagory",
     "pages/catagory/items/index",
     "pages/publish/publish",
-    "pages/message/message",
     "pages/location/location",
     "pages/detail/detail",
-
+    "pages/message/message",
     "pages/mine/mine",
     "pages/mine/items/index",
     "pages/mine/setup/setup",
     "pages/mine/aboutus/aboutus",
-    "pages/mine/info/info",
     "pages/mine/ontrans/index",
     "pages/login/login"
     
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#33cc66",
+    "navigationBarBackgroundColor": "#94ee94",
     "navigationBarTitleText": "易易校园二手",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "#ffffff",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
     "color": "#000000",
-    "selectedColor": "#33cc66",
+    "selectedColor": "#74ee74",
     "list": [
       {
         "pagePath": "pages/home/home",

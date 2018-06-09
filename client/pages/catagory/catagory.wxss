@@ -16,8 +16,8 @@
   margin: 20rpx;
   display: flex;
   flex-direction: row;
-  border-bottom:1rpx solid #33cc66;
-  border-right: 1rpx solid #33cc66;
+  border-bottom:3rpx solid #94ee94;
+  border-right: 5rpx solid #94ee94;
 }
 .single image{
   width: 200rpx;
