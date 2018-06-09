@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/publish/publish",
     "pages/home/home",
     "pages/catagory/catagory",
     "pages/catagory/items/index",
     "pages/message/message",
     "pages/location/location",
     "pages/detail/detail",
+    "pages/publish/publish",
 
     "pages/mine/mine",
     "pages/mine/items/index",
