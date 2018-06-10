@@ -22,7 +22,7 @@ Page({
     'vchicle': "代步工具",
     'snack': "休闲零食",
     'stationary': '文体用品',
-    'other': "其他"
+    'other': "其它"
   },
 
   getInput: function (e) {
